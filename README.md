@@ -1,6 +1,6 @@
 # [](https://github.com/karengala/Final-project/blob/main/README.md)ToDo App
 
-[Click para acceder a la web](https://todo-zantonz.vercel.app/)
+<!-- [Click para acceder a la web](https://todo-zantonz.vercel.app/) -->
 
 Autor: Karen Galarza
 Fecha: 07/02/2023
@@ -29,7 +29,7 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 - Revisar los archivos del proyecto
 - Conectar proyecto a Supabase y Github.
 - Crear tabla "Perfiles" en Supabase
-- Realizar la logica para el Sign Up, Sign In y Log Out
+- Realizar la logica para el Sign In y Log Out
 - Registrarse para comprobar si todo funciona correctamente
 -
 
