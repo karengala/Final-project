@@ -13,6 +13,7 @@
       :key="task.id"
       :task="task"
       @child-complete="completeTaskSupabase"
+      @edit-child="editTaskSupabase"
     />
   </div>
 </template>
@@ -57,6 +58,14 @@ const completeTaskSupabase = async (taskObject) => {
   await taskStore.completeTask(changeTaskBooleanValue, taskId);
   //getTasks();
 };
+
+//funcion para editar tarea conectandose con supabase
+const editTaskSupabase = async (editTaskObject) => {
+  console.log("click");
+  console.log(editTaskObject);
+
+  await taskStore.editTaskSupabase(editTaskObject.title,editTaskObject.description,editTaskObject.id)
+}
 </script>
 
 <style></style>
