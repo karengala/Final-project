@@ -1,38 +1,45 @@
-# [](https://github.com/zantonz/final-project/blob/master/README.md)ToDo App
+# [](https://github.com/karengala/Final-project/blob/main/README.md)ToDo App
 
 [Click para acceder a la web](https://todo-zantonz.vercel.app/)
 
-Autor: Anton Zyrianov
-Fecha: 25/08/2022
+Autor: Karen Galarza
+Fecha: 07/02/2023
 
 ## Descripcion
 
-![Pagina Home](https://i.postimg.cc/m2rV83dV/Captura-de-pantalla-2022-08-25-a-las-10-38-46.png)
+<!-- ![Pagina Home](https://i.postimg.cc/m2rV83dV/Captura-de-pantalla-2022-08-25-a-las-10-38-46.png)
 
 Se trata del proyecto final realizado durante el bootcamp de Front End Development en el Ironhack que consiste en una pagina web que te permite gestionar tus tareas.
 
 Es una aplicacion creada con Vue.js que permite a usuarios crear una cuenta, añadir tareas a completar, editarlas, marcarlas como completadas y finalmente borrarlas. Nuestra pagina web esta vinculada a una base de datos, donde estaremos almacenando todos los datos de usuarios y las tareas. En este caso, para gestionarlo utilizaremos Supabase, que nos ofrece un subconjunto de funcionalidades de Back End que nos permite gestionarlo como un servicio.
 
-__El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.js obtenidos durante el curos y ademas poder conectarlo a una base de datos externa y gestionarla.
+__El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.js obtenidos durante el curos y ademas poder conectarlo a una base de datos externa y gestionarla. -->
 
 ## Tecnologias empleadas:
 
-* __Client:__ Vue.js y Vite
-* __Router:__ Vue Router
-* __Store:__ Pinia y Pinia Persist para el Log In
-* __Database:__ Supabase
+- **Client:** Vue.js y Vite
+- **Router:** Vue Router
+- **Store:** Pinia y Pinia Persist para el Log In
+- **Database:** Supabase
 
 ## Seguimiento del proyecto:
 
-### 18 agosto:
-* Implentar HTML y CSS del Sign Up y Sing In
+### 7 Febrero:
 
-### 19 agosto:
-* Implentar la logica para el Sign Up, Sign In y Sing Out
-* Implentar los componentes del Navbar y el Footer
-* Empezar con el diseño HTML y CSS del componente addTask
+- Revisar los archivos del proyecto
+- Conectar proyecto a Supabase y Github.
+- Crear tabla "Perfiles" en Supabase
+- Realizar la logica para el Sign Up, Sign In y Log Out
+- Registrarse para comprobar si todo funciona correctamente
+-
 
-### 22 de agosto:
+### 8 Febrero:
+
+- Acabar boton de "edit" del addTask
+- Mirar referencias e inspiracion del diseño del proyecto
+- Empezar con el diseño HTML y CSS del Sing In.
+
+<!-- ### 22 de agosto:
 * Implementar la funcionalidad de addTask y taskItem
 * Añadir el diseño HTML y CSS del componente taskItem
 * Hacer el fetch de las tareas de Supabase al cargar la pagina y cada vez que se ejecute alguna accion de cambio
@@ -56,3 +63,4 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 * Preparar el README con la descripcion del proyecto
 * Preparar la presentacion del proyecto
 * Implementar funcionalidad del Timer
+ -->
