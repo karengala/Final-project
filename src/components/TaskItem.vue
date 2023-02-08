@@ -1,9 +1,9 @@
 <template>
 <div class="container">
-    <h3 :class="tareaCompletada ? 'clase1' :'clase2'">{{task.title}}</h3>
+    <h3 :class="props.task.is_complete ? 'clase1' :'clase2'">{{task.title}}</h3>
     <p>{{task.description}}</p>
     <button @click="deleteTask">Delete<!--  {{task.title}} --></button>
-    <button @click="toggleButton">completada</button>
+    <button @click="completeTask">completada</button>
 </div>
 </template>
 
@@ -11,9 +11,22 @@
 import { ref } from 'vue';
 import { useTaskStore } from '../stores/task';
 import { supabase } from '../supabase';
+//Definir emits para pasar logica y eventos hacia componentes padres
+const emit = defineEmits(["childComplete"
+]);
 
+// funcion para completar tarea que se encarga de enviar la info al padre
+const completeTask = () => {
+    /* console.log("click"); */
+    
+    /* console.log(props.task.is_complete); */
+    emit("childComplete", props.task)
+}
+
+// insert comment here after
 const taskStore = useTaskStore();
 
+// insert comment here after
 const props = defineProps({
     task: Object,
 });
@@ -23,7 +36,8 @@ const deleteTask = async() => {
     await taskStore.deleteTask(props.task.id);
 };
 
-const tareaCompletada = ref(true);
+const tareaCompletada = ref("false");
+
 const toggleButton = () => {
   tareaCompletada.value = !tareaCompletada.value;
 };

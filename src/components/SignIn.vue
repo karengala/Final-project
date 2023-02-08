@@ -29,7 +29,7 @@
             required
           />
         </div>
-        <button class="button" type="submit">Sing In</button>
+        <button class="button" type="submit">Sign In</button>
       </div>
     </form>
 

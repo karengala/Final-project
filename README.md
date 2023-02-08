@@ -37,7 +37,7 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 
 - Acabar boton de "edit" del addTask
 - Mirar referencias e inspiracion del diseño del proyecto
-- Empezar con el diseño HTML y CSS del Sing In.
+- Empezar con el diseño HTML y CSS del Sign Up.
 
 <!-- ### 22 de agosto:
 * Implementar la funcionalidad de addTask y taskItem
