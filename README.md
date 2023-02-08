@@ -28,28 +28,28 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 
 - Revisar los archivos del proyecto
 - Conectar proyecto a Supabase y Github.
-- Crear tabla "Perfiles" en Supabase
+- Crear tabla "Profile" en Supabase
 - Realizar la logica para el Sign In y Log Out
 - Registrarse para comprobar si todo funciona correctamente
--
 
 ### 8 Febrero:
 
-- Acabar boton de "edit" del addTask
+- Implementar la funcionalidad de addTask y taskItem
+- Hacer el fetch de las tareas de Supabase al cargar la pagina y cada vez que se ejecute alguna accion de cambio
+- Añadir funcionalidad a los botones "Edit/Delete/Completed"
+- Crear ventana de "confirmacion" para eliminar una tarea.
+- Mirar referencias e inspiracion del diseño del proyecto
+
+### 9 Febrero:
+
+- Acabar account.vue
+- Implemntar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In
 - Mirar referencias e inspiracion del diseño del proyecto
 - Empezar con el diseño HTML y CSS del Sign Up.
 
-<!-- ### 22 de agosto:
-* Implementar la funcionalidad de addTask y taskItem
-* Añadir el diseño HTML y CSS del componente taskItem
-* Hacer el fetch de las tareas de Supabase al cargar la pagina y cada vez que se ejecute alguna accion de cambio
+<!-- ### 23 de agosto:
 
-### 23 de agosto:
-* Preparar la tienda task.js para poder conectar los botones con la base de datos
-* Añadir funcionalidad al boton toggle que permite cambiar el estado de la tarea
-* Añadir funcionalidad al boton de cambiar el nombre que permite al usuario cambiar el titulo de la tarea
-* Añadir funcionalidad al boton de borrar la tarea
-* Implemntar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In
+*
 * Adaptar el diseño a la version movil, en este caso solo hay solo media query que se activa a partir de 747px para abajo
 
 ### 24 de agosto:
@@ -62,5 +62,4 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 * Repaso a la pagina y todas sus funcionalidades
 * Preparar el README con la descripcion del proyecto
 * Preparar la presentacion del proyecto
-* Implementar funcionalidad del Timer
- -->
+* Implementar funcionalidad del Timer -->
