@@ -12,7 +12,7 @@
       <button @click="deleteTask">Yes</button>
       <button @click="showModalToggle">Cancel</button>
     </div>
-    <button class= "@click="completeTask"></button>
+    <button class="markAsComplete" @click="completeTask"></button>
     <!--  </div> -->
 
     <button @click="showInput">edit</button>
