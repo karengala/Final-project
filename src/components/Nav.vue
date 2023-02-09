@@ -1,25 +1,23 @@
 <template>
   <nav>
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-    <router-link to="/">
-      Home
-    </router-link>
+    <router-link to="/"> Home </router-link>
 
     <ul>
-        <li>
-          <router-link to="/">Task Manager</router-link>
-        </li>
+      <!--  <li>
+        <router-link to="/">Task Manager</router-link>
+      </li> -->
 
-        <li>
-          <router-link to="/account">Your Account</router-link>
-        </li>
+      <li>
+        <router-link to="/account">Your Account</router-link>
+      </li>
     </ul>
 
     <div>
       <ul>
-        <li class="log-out-welcome">
+        <!-- <li class="log-out-welcome">
           <p>Welcome, user</p>
-        </li>
+        </li> -->
         <li>
           <button @click="signOut" class="button">Log out</button>
         </li>
@@ -33,7 +31,7 @@
 import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import { ref } from 'vue';
+import { ref } from "vue";
 
 //constant to save a variable that will hold the use router method
 const route = "/";
@@ -50,15 +48,14 @@ const userEmail = getUser.email;
 const redirect = useRouter();
 
 const signOut = async () => {
-  try{
+  try {
     // call the user store and send the users info to backend to signOut
     // then redirect user to the homeView
-     await useUserStore().signOut();
+    await useUserStore().signOut();
 
     redirect.push({ path: "/auth/login" });
   } catch (error) {}
 };
-
 </script>
 
 <style>
@@ -67,7 +64,7 @@ const signOut = async () => {
 }
 
 nav {
-  background-color: lightgray;
+  /* background-color: lightgray; */
   display: flex;
   width: 100%;
   justify-content: space-around;

@@ -1,12 +1,27 @@
-/* :root {
-    --colorWhite: #ffffff;
-    --colorBlack: #000000;
-    --colorRed: red;
-    --fontSize-sm: 16px;
-    --fontFamily: 'Arial, Helvetica, sans-serif';
-    --fontTitle: 'Arial';
-    --fontBody: 'Helvetica';
-} */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Montserrat:wght@300;600&family=Poppins:wght@200;500&family=Questrial&display=swap");
+
+* {
+  color: #fafafa;
+  font-family: Questrial;
+}
+body {
+  background: rgb(18, 18, 18);
+  margin: 15px;
+}
+:root {
+  --colorWhite: #ffffff;
+  --colorBlack: #000000;
+  --colorGreen: rgb(177, 241, 67);
+  --fontSize-sm: 16px;
+}
+h3 {
+  margin: 0px;
+  font-size: 20px;
+}
+
+p {
+  margin-top: 5px;
+}
 
 /* SignIn Component */
 
@@ -17,5 +32,16 @@
 /* SignUp Component */
 
 /* Home view */
+
+.containerTasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#containerForEachTask {
+  background-color: rgb(253, 64, 26);
+  padding: 10px;
+  border-radius: 10px;
+}
 
 /* Account View */

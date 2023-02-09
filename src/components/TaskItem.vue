@@ -1,23 +1,27 @@
 <template>
-  <div class="container">
+  <section id="containerForEachTask">
     <h3 :class="props.task.is_complete ? 'clase2' : 'clase1'">
       {{ task.title }}
     </h3>
-    <p>{{ task.description }}</p>
+    <p :class="props.task.is_complete ? 'clase2' : 'clase1'">
+      {{ task.description }}
+    </p>
     <button @click="showModalToggle">Delete<!-- {{task.title}} --></button>
     <div class="modal" v-if="showModal">
-      <h2>Are you sure you want to delete:{{ task.title }}</h2>
+      <h2>Are you sure you want to delete?</h2>
       <button @click="deleteTask">Yes</button>
       <button @click="showModalToggle">Cancel</button>
     </div>
-    <button @click="completeTask">completada</button>
-  </div>
-  <button @click="showInput">edit</button>
-  <div v-if="inputContainer">
-    <input type="text" v-model="currentTaskTitle" />
-    <input type="text" v-model="currentTaskDescription" />
-    <button @click="editTask">edit task</button>
-  </div>
+    <button class= "@click="completeTask"></button>
+    <!--  </div> -->
+
+    <button @click="showInput">edit</button>
+    <div v-if="inputContainer">
+      <input type="text" v-model="currentTaskTitle" />
+      <input type="text" v-model="currentTaskDescription" />
+      <button @click="editTask">edit task</button>
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -85,6 +89,7 @@ const showModalToggle = () => {
 
 <style>
 .clase1 {
+  /*  background-color: rgb(253, 64, 26); */
 }
 .clase2 {
   text-decoration: line-through;
@@ -93,7 +98,7 @@ const showModalToggle = () => {
   position: fixed;
   top: 50%;
   left: 50%;
-  background-color: red;
+  background-color: rgb(253, 64, 26);
 }
 </style>
 

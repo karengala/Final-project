@@ -2,19 +2,21 @@
   <div class="wrapper">
     <Nav />
 
-    <div class="content">
+    <!-- <div class="content">
       <h3>Your account:</h3>
       <router-link to="/account">Account</router-link>
-    </div>
+    </div> -->
     <NewTask />
     <h1>Tasks:</h1>
-    <TaskItem
-      v-for="task in tasks"
-      :key="task.id"
-      :task="task"
-      @child-complete="completeTaskSupabase"
-      @edit-child="editTaskSupabase"
-    />
+    <div class="containerTasks">
+      <TaskItem
+        v-for="task in tasks"
+        :key="task.id"
+        :task="task"
+        @child-complete="completeTaskSupabase"
+        @edit-child="editTaskSupabase"
+      />
+    </div>
   </div>
 </template>
 
@@ -64,8 +66,12 @@ const editTaskSupabase = async (editTaskObject) => {
   console.log("click");
   console.log(editTaskObject);
 
-  await taskStore.editTaskSupabase(editTaskObject.title,editTaskObject.description,editTaskObject.id)
-}
+  await taskStore.editTaskSupabase(
+    editTaskObject.title,
+    editTaskObject.description,
+    editTaskObject.id
+  );
+};
 </script>
 
 <style></style>
