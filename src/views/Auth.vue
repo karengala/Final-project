@@ -1,4 +1,5 @@
 <template>
+  MONK
   <router-view></router-view>
 </template>
 

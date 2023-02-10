@@ -39,20 +39,25 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 - Añadir funcionalidad a los botones "Edit/Delete/Completed"
 - Crear ventana de "confirmacion" para eliminar una tarea.
 - Mirar referencias e inspiracion del diseño del proyecto
+- Empezar con el diseño HTML y CSS del Sign Up.
 
 ### 9 Febrero:
 
+- Implementar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In
+- Buscar alternativa al modal de "+addTask"
+- Acabar el diseño del Sign Up/Sign In .
+- Empezar el diseño del Home/tasks.
+- Creacion de Vercel a traves de Github
+
+### 10 Febrero:
+
+- Reorganizar botones Delete/Complete/Edit segun diseño
 - Acabar account.vue
-- Implemntar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In
-- Mirar referencias e inspiracion del diseño del proyecto
-- Empezar con el diseño HTML y CSS del Sign Up.
+- Encontar la manera de reflejar el dia de publicacion
+- Adaptar el diseño a la version Desktop
+- Actualizar Readme
 
-<!-- ### 23 de agosto:
-
-*
-* Adaptar el diseño a la version movil, en este caso solo hay solo media query que se activa a partir de 747px para abajo
-
-### 24 de agosto:
+<!-- ### 24 de agosto:
 * Implementar menu hamburguesa para versiones moviles
 * Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Hecha", esta se tacha
 * Subir el proyecto a Vercel para que este disponible para todo el mundo
@@ -62,4 +67,4 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 * Repaso a la pagina y todas sus funcionalidades
 * Preparar el README con la descripcion del proyecto
 * Preparar la presentacion del proyecto
-* Implementar funcionalidad del Timer -->
+* Implementar funcionalidad del Timer  -->

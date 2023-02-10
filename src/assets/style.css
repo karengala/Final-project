@@ -1,35 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Montserrat:wght@300;600&family=Poppins:wght@200;500&family=Questrial&display=swap");
 
 * {
-  color: #fafafa;
+  color: rgb(18, 18, 18);
   font-family: Questrial;
 }
 body {
-  background: rgb(18, 18, 18);
+  background: #fafafa;
   margin: 15px;
 }
 :root {
-  --colorWhite: #ffffff;
+  --colorWhite: #fafafa;
   --colorBlack: #000000;
   --colorGreen: rgb(177, 241, 67);
   --fontSize-sm: 16px;
 }
 h3 {
   margin: 0px;
-  font-size: 20px;
+  font-size: 21px;
+}
+h4 {
+  margin-top: 18px;
+  margin-bottom: 3px;
+  font-size: 15px;
 }
 
 p {
-  margin-top: 5px;
+  margin: 0px;
+  font-size: 13px;
 }
 
 /* SignIn Component */
-
+.container {
+  margin: 10%;
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 70px;
+}
+.container h3 {
+  font-size: 31px;
+  width: 55%;
+  letter-spacing: 3px;
+  word-spacing: 1px;
+}
+h3 span {
+  text-decoration: line-through;
+}
+.form-sign-in input {
+  height: 17px;
+  width: 100%;
+}
 /* h1 {
     color: var(--colorRed);
 } */
 
 /* SignUp Component */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.logInButton,
+.signUpButton {
+  background-color: rgb(253, 64, 26);
+  border: none;
+  margin-top: 40px;
+  padding: 8px;
+  border-radius: 14px;
+}
 
 /* Home view */
 
@@ -41,7 +80,46 @@ p {
 #containerForEachTask {
   background-color: rgb(253, 64, 26);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+/* -----------NEW TASK------------ */
+.newTaskButton {
+  background-color: rgb(18, 18, 18);
+  color: rgb(253, 64, 26);
+  border: none;
+  font-size: 15px;
+  font-family: montserrat;
+  font-weight: 600;
+}
+.newtTaskInput {
+  display: flex;
+  padding: 14px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+input,
+textarea {
+  height: 17px;
+  width: 80vw;
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  resize: none;
+  font-size: 12px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0px;
 }
 
 /* Account View */

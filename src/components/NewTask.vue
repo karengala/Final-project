@@ -1,25 +1,19 @@
 <template>
-  <h1>+ Add new Task</h1>
-  <div v-if="showErrorMessage">
-    <p class="error-text">{{ errorMessage }}</p>
-  </div>
-  <div>
-    <div class="input-field">
-      <input
-        type="text"
-        placeholder="Add a Task Title - Listen to Kendrick Lamar"
-        v-model="name"
-      />
+  <button @click="showToggleNewTask" class="newTaskButton">+ Add Task</button>
+  <section v-if="showToggleTask" class="newtTaskInput">
+    <div v-if="showErrorMessage">
+      <p class="error-text">{{ errorMessage }}</p>
     </div>
+    <label for="name">titulo</label>
     <div class="input-field">
-      <input
-        type="text"
-        placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album."
-        v-model="description"
-      />
+      <input type="text" placeholder="Add a Task" v-model="name" />
+    </div>
+    <label for="description">descrption</label>
+    <div class="input-field">
+      <textarea type="text" placeholder="" v-model="description" />
     </div>
     <button @click="addTask" class="button">Add</button>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -54,8 +48,26 @@ const addTask = () => {
     taskStore.addTask(name.value, description.value);
     name.value = "";
     description.value = "";
+    showToggleTask.value = !showToggleTask.value;
   }
 };
+
+const emit = defineEmits(["showToggleValue"]);
+
+const showToggleTask = ref(false);
+const showModal = ref(false);
+const showToggleNewTask = () => {
+  showToggleTask.value = !showToggleTask.value;
+  emit("showToggleValue", showToggleTask.value);
+};
+
+/* como hacer para que la altura del input de vaya modificando segun la largura del texto de dentro del input.????? */
+
+/* const textarea = document.getElementsByClassName("tryTArea");
+textarea.addEventListener("keyup", (e) => {
+  let scHeight = e.target.scrollHeight;
+  textarea.style.height = `${scHeight}px`;
+}); */
 </script>
 
 <style></style>

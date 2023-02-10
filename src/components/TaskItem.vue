@@ -1,25 +1,37 @@
 <template>
   <section id="containerForEachTask">
-    <h3 :class="props.task.is_complete ? 'clase2' : 'clase1'">
-      {{ task.title }}
-    </h3>
-    <p :class="props.task.is_complete ? 'clase2' : 'clase1'">
-      {{ task.description }}
-    </p>
-    <button @click="showModalToggle">Delete<!-- {{task.title}} --></button>
-    <div class="modal" v-if="showModal">
-      <h2>Are you sure you want to delete?</h2>
-      <button @click="deleteTask">Yes</button>
-      <button @click="showModalToggle">Cancel</button>
+    <div class="taksTitle">
+      <!-- <p v-if="testProp">{{ testProp }} testttt</p> -->
+      <h3 :class="props.task.is_complete ? 'clase2' : 'clase1'">
+        ·
+        {{ task.title }}
+      </h3>
+      <p :class="props.task.is_complete ? 'clase2' : 'clase1'">
+        {{ task.description }}
+      </p>
     </div>
-    <button class="markAsComplete" @click="completeTask"></button>
-    <!--  </div> -->
-
-    <button @click="showInput">edit</button>
-    <div v-if="inputContainer">
-      <input type="text" v-model="currentTaskTitle" />
-      <input type="text" v-model="currentTaskDescription" />
-      <button @click="editTask">edit task</button>
+    <div class="buttonsInTasks">
+      <button @click="showModalToggle" :disabled="testProp ? true : false">
+        Delete
+      </button>
+      <div class="modal" v-if="showModal">
+        <h2>Are you sure you want to delete?</h2>
+        <button @click="deleteTask">Yes</button>
+        <button @click="showModalToggle">Cancel</button>
+      </div>
+      <button @click="showInput" :disabled="testProp ? true : false">
+        edit
+      </button>
+      <div v-if="inputContainer">
+        <input type="text" v-model="currentTaskTitle" />
+        <input type="text" v-model="currentTaskDescription" />
+        <button @click="editTask">edit task</button>
+      </div>
+      <button
+        class="markAsComplete"
+        @click="completeTask"
+        :disabled="testProp ? true : false"
+      ></button>
     </div>
   </section>
 </template>
@@ -45,6 +57,7 @@ const taskStore = useTaskStore();
 // variable para recibir informacion de la tarea mediante prop como .objeto
 const props = defineProps({
   task: Object,
+  testProp: String,
 });
 
 //funcion para mostrar y ocultar inputs
@@ -87,7 +100,7 @@ const showModalToggle = () => {
 /* const tareaCompletada = ref("false"); */
 </script>
 
-<style>
+<style scoped>
 .clase1 {
   /*  background-color: rgb(253, 64, 26); */
 }
@@ -95,10 +108,28 @@ const showModalToggle = () => {
   text-decoration: line-through;
 }
 .modal {
+  border: 2px solid;
   position: fixed;
   top: 50%;
   left: 50%;
   background-color: rgb(253, 64, 26);
+}
+.markAsComplete {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  /* position: absolut; */
+}
+.buttonsInTasks {
+  /*  border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+}
+.taksTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 </style>
 

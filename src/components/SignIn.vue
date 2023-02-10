@@ -2,37 +2,39 @@
 
 <template>
   <div class="container">
-    <h3 class="header-title">Log In to ToDo App</h3>
-    <p class="header-subtitle">
+    <h3 class="header-title">Log In to <span> MONK</span></h3>
+    <!--   <p class="header-subtitle">
       Estamos en la ruta de login. Aquí deberíais crear un form con la lógica
       correspondiente para que este permita al usuario loguearse con su email y
       su contraseña. Miraros la lógica de SignUp si necesitáis inspiración :)
-    </p>
+    </p> -->
 
     <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">
         <div class="form-input">
+          <h4>Username/Email</h4>
           <input
             type="email"
             class="input-field"
-            placeholder="example@gmail.com"
+            placeholder=""
             id="email"
             v-model="email"
             required
           />
         </div>
         <div class="form-input">
+          <h4>Password</h4>
           <input
             :type="userPassword ? 'text' : 'password'"
             class="input-field"
-            placeholder="**********"
+            placeholder=""
             id="password"
             v-model="password"
             required
           />
-          <button @click.prevent="showPassword">mostar contraseña</button>
+          <!-- <button @click.prevent="showPassword">mostar contraseña</button> -->
         </div>
-        <button class="button" type="submit">Sign In</button>
+        <button class="logInButton" type="submit">Sign In</button>
       </div>
     </form>
 
@@ -94,4 +96,4 @@ const signIn = async () => {
 };
 </script>
 
-<style></style>
+<style scooped></style>

@@ -6,8 +6,12 @@
       <h3>Your account:</h3>
       <router-link to="/account">Account</router-link>
     </div> -->
-    <NewTask />
+    <!--  <div class="minimal-wrapper"> -->
+    <div class="add">
+      <NewTask @show-toggle-value="blockButtonsTest" />
+    </div>
     <h1>Tasks:</h1>
+    <!-- </div> -->
     <div class="containerTasks">
       <TaskItem
         v-for="task in tasks"
@@ -15,6 +19,7 @@
         :task="task"
         @child-complete="completeTaskSupabase"
         @edit-child="editTaskSupabase"
+        :testProp="testProp"
       />
     </div>
   </div>
@@ -38,11 +43,19 @@ const getTasks = async () => {
   tasks.value = await taskStore.fetchTasks();
 };
 
-getTasks();
-
 onUpdated(() => {
   getTasks();
 });
+
+//
+let testProp = ref(null);
+const blockButtonsTest = (value) => {
+  /* alert(value) */
+  testProp.value = value;
+};
+
+getTasks();
+
 //onUpdated(() => {})
 
 //Funcion para completar tarea conectandose a Supabase
@@ -73,8 +86,14 @@ const editTaskSupabase = async (editTaskObject) => {
   );
 };
 </script>
-
-<style></style>
+<style>
+/* .minimal-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+} */
+</style>
 
 <!-- 
 **Hints**

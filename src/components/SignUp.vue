@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-
     <div class="header">
       <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
+        <h3 class="header-title">Register to <span> MONK</span> App</h3>
+        <br />
         <p class="header-subtitle">Start organizing your tasks!</p>
       </div>
     </div>
@@ -11,51 +11,52 @@
     <form @submit.prevent="signUp" class="form-sign-in">
       <div class="form">
         <div class="form-input">
-          <label class="input-field-label">E-mail</label>
+          <h4 class="input-field-label">E-mail</h4>
           <input
             type="email"
             class="input-field"
-            placeholder="example@gmail.com"
+            placeholder=""
             id="email"
             v-model="email"
             required
           />
         </div>
         <div class="form-input">
-          <label class="input-field-label">Password</label>
+          <h4 class="input-field-label">Password</h4>
           <input
             type="password"
             class="input-field"
-            placeholder="**********"
+            placeholder=""
             id="password"
             v-model="password"
             required
           />
         </div>
         <div class="form-input">
-          <label class="input-field-label">Confirm password</label>
+          <h4 class="input-field-label">Confirm password</h4>
           <input
             type="password"
             class="input-field"
-            placeholder="**********"
+            placeholder=""
             id="confirmPassword"
             v-model="confirmPassword"
             required
           />
         </div>
-        <button class="button" type="submit">Sign Up</button>
-        <p>
-          Have an account?
-          <PersonalRouter
-            :route="route"
-            :buttonText="buttonText"
-            class="sign-up-link"
-          />
-        </p>
+        <button class="signUpButton" type="submit">Sign Up</button>
+        <p></p>
       </div>
     </form>
+    <p>
+      Have an account?
+      <PersonalRouter
+        :route="route"
+        :buttonText="buttonText"
+        class="sign-up-link"
+      />
+    </p>
 
-    <div v-show="errorMsg">{{errorMsg}}</div>
+    <div v-show="errorMsg">{{ errorMsg }}</div>
   </div>
 </template>
 
