@@ -24,15 +24,22 @@
         </div>
         <div class="form-input">
           <h4>Password</h4>
-          <input
-            :type="userPassword ? 'text' : 'password'"
-            class="input-field"
-            placeholder=""
-            id="password"
-            v-model="password"
-            required
-          />
-          <!-- <button @click.prevent="showPassword">mostar contraseña</button> -->
+          <div class="form-input-password">
+            <input
+              :type="userPassword ? 'text' : 'password'"
+              class="input-field"
+              placeholder=""
+              id="password"
+              v-model="password"
+              required
+            />
+            <img
+              class="mostrar"
+              @click.prevent="showPassword"
+              src="https://cdn-icons-png.flaticon.com/512/14/14777.png"
+              alt=""
+            />
+          </div>
         </div>
         <button class="logInButton" type="submit">Sign In</button>
       </div>

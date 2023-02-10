@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Montserrat:wght@300;600&family=Poppins:wght@200;500&family=Questrial&display=swap");
 
 * {
-  color: rgb(18, 18, 18);
+  color: #fafafa;
   font-family: Questrial;
 }
 body {
-  background: #fafafa;
+  background: rgb(18, 18, 18);
   margin: 15px;
 }
 :root {
@@ -51,6 +51,28 @@ h3 span {
 .form-sign-in input {
   height: 17px;
   width: 100%;
+}
+.form-input,
+.input-titulo,
+.input-description {
+  border-bottom: 1px solid;
+  border-radius: none;
+}
+.form-input-password {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#password,
+#email {
+  width: 87%;
+}
+img.mostrar {
+  border-radius: none;
+  border: none;
+  background-color: transparent;
+  width: 25px;
+  height: 23px;
 }
 /* h1 {
     color: var(--colorRed);
@@ -112,10 +134,11 @@ textarea {
   width: 80vw;
   background: none;
   border: none;
-  border-bottom: 1px solid;
   outline: none;
   resize: none;
   font-size: 12px;
+  border-radius: none;
+  background-color: transparent;
 }
 
 textarea::-webkit-scrollbar {

@@ -4,13 +4,17 @@
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>
-    <label for="name">titulo</label>
-    <div class="input-field">
-      <input type="text" placeholder="Add a Task" v-model="name" />
+    <div class="input-titulo">
+      <label for="name">titulo</label>
+      <div class="input-field">
+        <input type="text" placeholder="Add a Task" v-model="name" />
+      </div>
     </div>
-    <label for="description">descrption</label>
-    <div class="input-field">
-      <textarea type="text" placeholder="" v-model="description" />
+    <div class="input-description">
+      <label for="description">descrption</label>
+      <div class="input-field">
+        <textarea type="text" placeholder="" v-model="description" />
+      </div>
     </div>
     <button @click="addTask" class="button">Add</button>
   </section>
