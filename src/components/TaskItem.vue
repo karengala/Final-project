@@ -1,34 +1,50 @@
 <template>
   <section id="containerForEachTask">
-    <div class="taksTitle">
-      <!-- <p v-if="testProp">{{ testProp }} testttt</p> -->
-      <h3 :class="props.task.is_complete ? 'clase2' : 'clase1'">
-        ·
-        {{ task.title }}
-      </h3>
-      <p :class="props.task.is_complete ? 'clase2' : 'clase1'">
-        {{ task.description }}
-      </p>
+    <div class="markAsComplete">
+      <button
+        :class="props.task.is_complete ? 'unCompleted' : 'completed'"
+        @click="completeTask"
+      ></button
+      ><!-- :disabled="testProp ? true : false" -->
+      <div class="taksTitle">
+        <!-- <p v-if="testProp">{{ testProp }} testttt</p> -->
+        <h3 :class="props.task.is_complete ? 'clase2' : 'clase1'">
+          {{ task.title }}
+        </h3>
+        <p :class="props.task.is_complete ? 'clase2' : 'clase1'">
+          {{ task.description }}
+        </p>
+      </div>
     </div>
     <div class="buttonsInTasks">
-      <button @click="showModalToggle">Delete</button>
+      <img
+        src="https://th.bing.com/th/id/R.0e8446f0392d95cc1415906097cf1691?rik=%2bw1%2b2rXL55p0RQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_237965.png&ehk=Nf0bz9QKT4MjP9ugbOEUC%2b9P3Fu4nZ2t1uasEjyaYLI%3d&risl=&pid=ImgRaw&r=0"
+        alt="deleteIcon"
+        @click="showModalToggle"
+        class="deleteIcon"
+      />
+      <!-- <button @click="showModalToggle">Delete</button> -->
       <!-- :disabled="testProp ? true : false" -->
       <div class="modal" v-if="showModal">
         <h2>Are you sure you want to delete?</h2>
         <button @click="deleteTask">Yes</button>
         <button @click="showModalToggle">Cancel</button>
       </div>
-      <button @click="showInput">
-        <!-- :disabled="testProp ? true : false" -->
+      <!--  <button @click="showInput">
+         :disabled="testProp ? true : false" 
         edit
-      </button>
+      </button> -->
+      <img
+        src="https://th.bing.com/th/id/R.e3956e57360db26f1bfb076dc8c6b993?rik=nnqKo%2fU0PIULJQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_194863.png&ehk=rBnNrjucmayGnMHH13LzpLSRgf09IrhS3tDD49erb6U%3d&risl=&pid=ImgRaw&r=0"
+        alt="editIcon"
+        @click="showInput"
+        class="editIcon"
+      />
       <div v-if="inputContainer">
         <input type="text" v-model="currentTaskTitle" />
         <input type="text" v-model="currentTaskDescription" />
         <button @click="editTask">edit task</button>
       </div>
-      <button class="markAsComplete" @click="completeTask"></button
-      ><!-- :disabled="testProp ? true : false" -->
     </div>
   </section>
 </template>
@@ -54,8 +70,10 @@ const taskStore = useTaskStore();
 // variable para recibir informacion de la tarea mediante prop como .objeto
 const props = defineProps({
   task: Object,
-  testProp: String,
+  //testProp: String,
 });
+
+const completed = ref(false);
 
 //funcion para mostrar y ocultar inputs
 const inputContainer = ref(false);
@@ -93,37 +111,9 @@ const showModal = ref(false);
 const showModalToggle = () => {
   showModal.value = !showModal.value;
 };
-
-/* const tareaCompletada = ref("false"); */
 </script>
 
-<style scoped>
-.clase1 {
-  /*  background-color: rgb(253, 64, 26); */
-}
-.clase2 {
-  text-decoration: line-through;
-}
-.modal {
-  border: 2px solid;
-}
-.markAsComplete {
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  border: 1px solid gray;
-}
-.buttonsInTasks {
-  display: flex;
-  flex-direction: column;
-  width: 6%;
-}
-.taksTitle {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-</style>
+<style scoped></style>
 
 <!--
 **Hints**

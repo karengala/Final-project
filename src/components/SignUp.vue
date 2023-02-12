@@ -23,14 +23,22 @@
         </div>
         <div class="form-input">
           <h4 class="input-field-label">Password</h4>
-          <input
-            type="password"
-            class="input-field"
-            placeholder=""
-            id="password"
-            v-model="password"
-            required
-          />
+          <div class="form-input-password">
+            <input
+              :type="userPassword ? 'text' : 'password'"
+              class="input-field"
+              placeholder=""
+              id="password"
+              v-model="password"
+              required
+            />
+            <img
+              class="mostrar"
+              @click.prevent="showPassword"
+              src="https://cdn-icons-png.flaticon.com/512/14/14777.png"
+              alt=""
+            />
+          </div>
         </div>
         <div class="form-input">
           <h4 class="input-field-label">Confirm password</h4>
@@ -102,6 +110,12 @@ const signUp = async () => {
     return;
   }
   errorMsg.value = "error";
+};
+
+const userPassword = ref(false);
+
+const showPassword = () => {
+  userPassword.value = !userPassword.value;
 };
 </script>
 

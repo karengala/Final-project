@@ -8,7 +8,7 @@
     </div> -->
     <!--  <div class="minimal-wrapper"> -->
     <div class="add">
-      <NewTask @show-toggle-value="blockButtonsTest" />
+      <NewTask />
     </div>
     <h1>Tasks:</h1>
     <!-- </div> -->
@@ -50,7 +50,6 @@ onUpdated(() => {
 //
 let testProp = ref(null);
 const blockButtonsTest = (value) => {
-  /* alert(value) */
   testProp.value = value;
 };
 
@@ -86,14 +85,7 @@ const editTaskSupabase = async (editTaskObject) => {
   );
 };
 </script>
-<style>
-/* .minimal-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-} */
-</style>
+<style></style>
 
 <!-- 
 **Hints**

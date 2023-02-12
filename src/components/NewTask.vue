@@ -13,7 +13,14 @@
     <div class="input-description">
       <label for="description">descrption</label>
       <div class="input-field">
-        <textarea type="text" placeholder="" v-model="description" />
+        <textarea
+          id="prueba"
+          class="input-text"
+          type="text"
+          placeholder=""
+          v-model="description"
+          :rows="filas"
+        />
       </div>
     </div>
     <button @click="addTask" class="button">Add</button>
@@ -21,7 +28,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useTaskStore } from "../stores/task";
 
 const taskStore = useTaskStore();
@@ -29,6 +36,7 @@ const taskStore = useTaskStore();
 // variables para los valors de los inputs
 const name = ref("");
 const description = ref("");
+const filas = ref(1);
 
 // constant to save a variable that holds an initial false boolean value for the errorMessage container that is conditionally displayed depending if the input field is empty
 const showErrorMessage = ref(false);
@@ -57,15 +65,29 @@ const addTask = () => {
 };
 
 const emit = defineEmits(["showToggleValue"]);
+const textarea = ref("");
 
 const showToggleTask = ref(false);
 const showModal = ref(false);
 const showToggleNewTask = () => {
   showToggleTask.value = !showToggleTask.value;
-  emit("showToggleValue", showToggleTask.value);
+  /* emit("showToggleValue", showToggleTask.value); */
+  setTimeout(() => {
+    textarea.value = document.querySelector("#prueba");
+    console.log(textarea.value);
+    textarea.value.addEventListener(
+      "keypress",
+      (event) => {
+        console.log("hola");
+        /*  if()=>{
+          
+        }
+        textarea.style.height = */
+      },
+      20
+    );
+  });
 };
-
-/* como hacer para que la altura del input de vaya modificando segun la largura del texto de dentro del input.????? */
 
 /* const textarea = document.getElementsByClassName("tryTArea");
 textarea.addEventListener("keyup", (e) => {
