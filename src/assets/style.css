@@ -7,11 +7,12 @@
 body {
   background: rgb(18, 18, 18);
   margin: 15px;
+  font-family: Questrial;
 }
 :root {
   --colorWhite: #fafafa;
   --colorBlack: #000000;
-  --colorGreen: rgb(177, 241, 67);
+  --colorGreen: rgb(253, 64, 26);
   --fontSize-sm: 16px;
 }
 h3 {
@@ -22,8 +23,8 @@ h4 {
   margin-top: 18px;
   margin-bottom: 3px;
   font-size: 15px;
+  font-family: Questrial;
 }
-
 p {
   margin: 0px;
   font-size: 13px;
@@ -41,7 +42,7 @@ p {
 }
 .container h3 {
   font-size: 31px;
-  width: 55%;
+  width: 75%;
   letter-spacing: 3px;
   word-spacing: 1px;
 }
@@ -75,9 +76,19 @@ img.mostrar {
   height: 23px;
   filter: invert(1);
 }
-/* h1 {
-    color: var(--colorRed);
-} */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(18, 18, 18) inset;
+  -webkit-text-fill-color: white;
+}
 
 /* ------------- SignUp Component -----------------------------*/
 .form {
@@ -92,7 +103,6 @@ img.mostrar {
   padding: 8px;
   border-radius: 14px;
 }
-
 /* ---------------------------- Home view --------------------------*/
 .clase1 {
   /*  background-color: rgb(253, 64, 26); */
@@ -104,7 +114,7 @@ img.mostrar {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  border: 1px solid gray;
+  border: 1px solid rgb(253, 64, 26);
 }
 .unCompleted {
   background-color: gray;
@@ -112,12 +122,10 @@ img.mostrar {
   width: 15px;
   border-radius: 50%;
 }
-
 .modal {
   border: 2px solid;
   position: fixed;
 }
-
 .buttonsInTasks {
   display: flex;
   gap: 25px;
@@ -154,15 +162,19 @@ img.mostrar {
   gap: 13px;
   width: 23%;
   height: 121px;
+  position: relative;
 }
 .markAsComplete {
   display: flex;
   flex-direction: row;
 }
+.dateContainer {
+  display: none;
+}
 
 /* ----------------------------- NEW TASK -------------------------- */
 .newTaskButton {
-  background-color: rgb(18, 18, 18);
+  background-color: transparent;
   color: rgb(253, 64, 26);
   border: none;
   font-size: 15px;
@@ -177,7 +189,6 @@ img.mostrar {
   align-items: flex-start;
   gap: 16px;
 }
-
 input,
 textarea {
   /* height: 17px; */
@@ -191,11 +202,9 @@ textarea {
   background-color: transparent;
   margin-top: 8px;
 }
-
 textarea::-webkit-scrollbar {
   width: 0px;
 }
-
 /* Account View */
 
 /* ------------------------- Smaller than 766px (mobile) ------------------------- */
@@ -205,76 +214,49 @@ textarea::-webkit-scrollbar {
   .containerTasks {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 37px;
     padding: 0px;
   }
   #containerForEachTask {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     width: 95%;
     height: 60px;
     padding: 10px;
+    background-color: transparent;
   }
   .markAsCompletebutton {
     display: flex;
     flex-direction: row;
   }
-
-  /* -----------NEW TASK------------ */
-  .newTaskButton {
-    background-color: rgb(18, 18, 18);
-    color: rgb(253, 64, 26);
-    border: none;
-    font-size: 15px;
-    font-family: montserrat;
-    font-weight: 600;
+  .markAsComplete {
+    width: 67%;
   }
-  .newtTaskInput {
+  .dateContainer {
+    border-right: 1px solid grey;
     display: flex;
-    padding: 14px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    gap: 16px;
+    font-size: 55px;
+    padding-right: 20px;
   }
-
-  input,
-  textarea {
-    /* height: 17px; */
-    width: 80vw;
-    background: none;
-    border: none;
-    outline: none;
-    resize: none;
-    font-size: 12px;
-    border-radius: none;
-    background-color: transparent;
-    margin-top: 8px;
-  }
-
-  textarea::-webkit-scrollbar {
-    width: 0px;
-  }
-
+  /* -----------NEW TASK------------ */
   /* ------------ tasks ------------------*/
   .buttonsInTasks {
     flex-direction: column;
     gap: 23px;
     align-items: flex-end;
   }
-
-  .taksTitle {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    margin: -4px 6px;
-  }
   .editIcon {
     height: 15px;
     width: 15px;
+    /* filter: none; */
   }
   .deleteIcon {
     display: none;
+  }
+  .unCompleted {
+    background-color: rgb(253, 64, 26);
+    border-radius: 50%;
+    border: none;
   }
   /* Account View */
 }

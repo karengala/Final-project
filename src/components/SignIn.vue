@@ -103,42 +103,4 @@ const signIn = async () => {
 };
 </script>
 
-<style scooped>
-/* #email {
-  background-color: black !important;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
-}
-
-input:-internal-autofill-selected {
-  appearance: menulist-button;
-  background-image: none !important;
-  background-color: -internal-light-dark(
-    rgb(0, 0, 0),
-    rgba(70, 90, 126, 0.4)
-  ) !important;
-  color: fieldtext !important;
-} */
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  /* border: 1px solid rgb(0, 0, 0);
-  -webkit-text-fill-color: rgb(255, 255, 255);  */
-  -webkit-box-shadow: 0 0 0px 1000px rgb(18, 18, 18) inset;
-  -webkit-text-fill-color: white;
-  /*  transition: background-color 5000s ease-in-out 0s;  */
-}
-</style>
+<style scooped></style>
