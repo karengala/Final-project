@@ -1,6 +1,6 @@
 <template>
   <section id="containerForEachTask">
-    <div class="dateContainer">34</div>
+    <div class="dateContainer"><b>54</b></div>
     <div class="markAsComplete">
       <button
         :class="props.task.is_complete ? 'unCompleted' : 'completed'"
