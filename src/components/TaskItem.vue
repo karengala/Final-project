@@ -1,6 +1,8 @@
 <template>
   <section id="containerForEachTask">
-    <div class="dateContainer"><b>54</b></div>
+    <div class="dateContainer">
+      {{ task.id }}
+    </div>
     <div class="markAsComplete">
       <button
         :class="props.task.is_complete ? 'unCompleted' : 'completed'"
@@ -40,6 +42,7 @@
         @click="showInput"
         class="editIcon"
       />
+      <!-- CREAR UNA FUNCION QUE REDIRIJA A OTRA VIEW CON UNOS INPUTS PARA EDITAR ESA TASK Y SUSTITUIRLA EN EL @CLICK  "SHOWINPUT" -->
     </div>
     <div v-if="inputContainer" class="editInfoContainer">
       <input type="text" v-model="currentTaskTitle" />
@@ -59,7 +62,6 @@ const emit = defineEmits(["childComplete", "editChild"]);
 // funcion para completar tarea que se encarga de enviar la info al padre
 const completeTask = () => {
   /* console.log("click"); */
-
   /* console.log(props.task.is_complete); */
   emit("childComplete", props.task);
 };
@@ -93,6 +95,7 @@ const editTask = () => {
   ) {
     alert("Title or Description can not be empty");
   } else {
+    inputContainer.value = !inputContainer.value;
     const newTaskEdited = {
       title: currentTaskTitle.value,
       description: currentTaskDescription.value,

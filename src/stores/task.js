@@ -28,11 +28,6 @@ export const useTaskStore = defineStore("tasks", () => {
     ]);
   };
 
-  /*  const { data, error } = await supabase
-  .from('tasks')
-  .update({ other_column: 'otherValue' })
-  .eq('some_column', 'someValue') */
-
   //Completar tarea de Supabase - apuntando al valor booleano is_complete
   const completeTask = async (valorDeBooleano, id) => {
     let { data: tasks, error } = await supabase

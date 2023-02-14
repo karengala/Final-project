@@ -1,6 +1,8 @@
 <template>
   <Nav />
-  <h1>Name: {{ username }}</h1>
+  <h1>username: {{ username }}</h1>
+  <!-- <h2>Name: {{ name }}</h2>
+  <h2>website: {{ website }}</h2> -->
   <img
     :src="
       avatar_url
@@ -8,7 +10,10 @@
         : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
     "
     alt="Profile picture"
+    class="profilePicture"
   />
+  <button>edit</button>
+  <router-link to="/edit">edit</router-link>
 </template>
 
 <script setup>
@@ -23,6 +28,7 @@ const loading = ref(false);
 const username = ref(null);
 const website = ref(null);
 const avatar_url = ref(null);
+const name = ref(null);
 
 onMounted(() => {
   getProfile();
@@ -32,7 +38,22 @@ async function getProfile() {
   await userStore.fetchUser();
   username.value = userStore.profile.username;
   avatar_url.value = userStore.profile.avatar_url;
+  website.value = userStore.profile.website;
+  name.value = userStore.profile.name;
 }
+
+//funcion para editar infouser conectandose con supabase
+const editProfile = async () => {
+  console.log("click");
+  /* console.log(editProfileObject); */
+
+  await userStore.editProfile(
+    editProfileObject.username.value,
+    editProfileObject.avatar_url.value,
+    editProfileObject.website.value
+  );
+  console.log("HELLO");
+};
 
 async function signOut() {
   try {
@@ -48,10 +69,11 @@ async function signOut() {
 </script>
 
 <style scooped>
-/* img {
+.profilePicture {
   width: 200px;
   border-radius: 50%;
-} */
+  padding: 67px;
+}
 #contenedor {
   display: inline-block;
   min-width: 100px;

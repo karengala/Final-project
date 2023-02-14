@@ -36,7 +36,7 @@ const taskStore = useTaskStore();
 // variables para los valors de los inputs
 const name = ref("");
 const description = ref("");
-const filas = ref(1);
+/* const filas = ref(1); */
 
 // constant to save a variable that holds an initial false boolean value for the errorMessage container that is conditionally displayed depending if the input field is empty
 const showErrorMessage = ref(false);
@@ -65,24 +65,22 @@ const addTask = () => {
 };
 
 const emit = defineEmits(["showToggleValue"]);
-const textarea = ref("");
+/* const textarea = ref(""); */
 
 const showToggleTask = ref(false);
-const showModal = ref(false);
 const showToggleNewTask = () => {
   showToggleTask.value = !showToggleTask.value;
-  /* emit("showToggleValue", showToggleTask.value); */
+  emit("showToggleValue", showToggleTask.value);
   setTimeout(() => {
     textarea.value = document.querySelector("#prueba");
     console.log(textarea.value);
     textarea.value.addEventListener(
-      "keypress",
+      "keyup",
       (event) => {
         console.log("hola");
-        /*  if()=>{
-          
-        }
-        textarea.style.height = */
+        /* if()=>{} */
+        let scHeight = e.target.scrolHeight;
+        textarea.style.height = `${scHeight}px`;
       },
       20
     );

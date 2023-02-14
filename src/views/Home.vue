@@ -1,17 +1,16 @@
 <template>
   <div class="wrapper">
     <Nav />
-
     <!-- <div class="content">
       <h3>Your account:</h3>
       <router-link to="/account">Account</router-link>
     </div> -->
     <!--  <div class="minimal-wrapper"> -->
     <div class="add">
+      <!-- </div> -->
+      <h1>Tasks:</h1>
       <NewTask />
     </div>
-    <h1>Tasks:</h1>
-    <!-- </div> -->
     <div class="containerTasks">
       <TaskItem
         v-for="task in tasks"
@@ -19,8 +18,8 @@
         :task="task"
         @child-complete="completeTaskSupabase"
         @edit-child="editTaskSupabase"
-        :testProp="testProp"
       />
+      <!-- :testProp="testProp" -->
     </div>
   </div>
 </template>
@@ -48,10 +47,10 @@ onUpdated(() => {
 });
 
 //
-let testProp = ref(null);
+/* let testProp = ref(null);
 const blockButtonsTest = (value) => {
   testProp.value = value;
-};
+}; */
 
 getTasks();
 
@@ -85,7 +84,7 @@ const editTaskSupabase = async (editTaskObject) => {
   );
 };
 </script>
-<style></style>
+<style scooped></style>
 
 <!-- 
 **Hints**
