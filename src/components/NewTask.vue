@@ -75,12 +75,9 @@ const showToggleNewTask = () => {
     textarea.value = document.querySelector("#prueba");
     console.log(textarea.value);
     textarea.value.addEventListener(
-      "keyup",
+      "keypress",
       (event) => {
         console.log("hola");
-        /* if()=>{} */
-        let scHeight = e.target.scrolHeight;
-        textarea.style.height = `${scHeight}px`;
       },
       20
     );

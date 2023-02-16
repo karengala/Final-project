@@ -75,7 +75,7 @@ async function signOut() {
   padding: 67px;
 }
 #contenedor {
-  display: inline-block;
+  display: flex;
   min-width: 100px;
   width: 100%;
 }

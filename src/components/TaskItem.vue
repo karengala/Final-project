@@ -42,14 +42,14 @@
         @click="showInput"
         class="editIcon"
       />
-      <!-- CREAR UNA FUNCION QUE REDIRIJA A OTRA VIEW CON UNOS INPUTS PARA EDITAR ESA TASK Y SUSTITUIRLA EN EL @CLICK  "SHOWINPUT" -->
-    </div>
-    <div v-if="inputContainer" class="editInfoContainer">
-      <input type="text" v-model="currentTaskTitle" />
-      <input type="text" v-model="currentTaskDescription" />
-      <button @click="editTask">edit task</button>
+      <!-- CREAR UNA FUNCION QUE REDIRIJA A OTRA VIEW CON UNOS INPUTS PARA EDITAR ESA TASK (en mobile) -->
     </div>
   </section>
+  <div v-if="inputContainer" class="editInfoContainer">
+    <input type="text" v-model="currentTaskTitle" />
+    <input type="text" v-model="currentTaskDescription" />
+    <button @click="editTask">edit task</button>
+  </div>
 </template>
 
 <script setup>
@@ -121,32 +121,6 @@ const showModalToggle = () => {
   width: 16vw;
 
 } */
-.editInfoContainer :first-child {
-  width: 17.8vw;
-  height: 24px;
-  /* border: 1px solid; */
-  position: absolute;
-  top: 5px;
-  left: 36px;
-  background-color: rgb(253 64 26);
-  font-weight: 700;
-  font-size: 21px;
-}
-.editInfoContainer :nth-child(2) {
-  width: 16vw;
-  /*   border: 1px solid; */
-  position: absolute;
-  top: 31px;
-  left: 38px;
-  font-size: 13px;
-  background-color: rgb(253 64 26);
-}
-.editInfoContainer :last-child {
-  border: 1px solid;
-  position: absolute;
-  top: 111px;
-  left: 118px;
-}
 </style>
 
 <!--
