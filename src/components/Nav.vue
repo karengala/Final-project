@@ -1,35 +1,54 @@
 <template>
-  <nav>
-    <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
+  <div class="container-fluid" id="app">
+    <nav class="row navbar">
+      <div class="col-xs-6">
+        <div class="hamburger-wrap">
+          <button class="hamburger" type="button" @click="menuOpen = !menuOpen">
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row dropdown" :class="{ 'dropdown-after': menuOpen }">
+      <ul class="navlist">
+        <li class="navlistitem">
+          <router-link to="/"> Home </router-link>
+        </li>
+        <li class="navlistitem">
+          <router-link to="/account">Your Account</router-link>
+        </li>
+        <li class="navlistitem">
+          <button @click="signOut" class="button">Log out</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--  <nav>
     <router-link to="/"> Home </router-link>
-
     <ul>
-      <!--  <li>
-        <router-link to="/">Task Manager</router-link>
-      </li> -->
-
       <li>
         <router-link to="/account">Your Account</router-link>
       </li>
     </ul>
-
     <div>
       <ul>
-        <!-- <li class="log-out-welcome">
-          <p>Welcome, user</p>
-        </li> -->
         <li>
           <button @click="signOut" class="button">Log out</button>
         </li>
       </ul>
     </div>
-    <div class="hamburguer">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </nav>
+  </nav> -->
 </template>
+
+<!-- <div class="hamburguer">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div> -->
 
 <script setup>
 // import PersonalRouter from "./PersonalRouter.vue";
@@ -63,6 +82,14 @@ const signOut = async () => {
 };
 
 /* ---------------- HAMBURGER MENU ------------------ */
+
+/* new Vue({
+  el: "#app",
+  data: {
+    menuOpen: false,
+  },
+}); */
+
 /* const hamburguer = document.querySelector(".hamburguer")
 const navMenu = document.querySelector(".nav-menu")
 
@@ -79,23 +106,23 @@ hamburguer.addEventListener("click", () => {
 }
 
 nav {
-  /* background-color: lightgray; */
+  background-color: lightgray;
   display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
+  /* width: 179%; */
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-nav ul {
+/* nav ul {
   list-style: none;
   padding-inline-start: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+ */
 /*  ------------ HAMBURGUER ------------- */
-.hamburguer {
+/* .hamburguer {
   display: none;
   cursor: pointer;
 }
@@ -108,5 +135,73 @@ nav ul {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #5ccd1a;
+} */
+
+.hamburger-wrap {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-wrap {
+  float: right;
+  justify-content: flex-end;
+}
+
+.hamburger {
+  width: 45px;
+  height: 45px;
+  background-color: black;
+  border-radius: 4px;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.hamburger__line {
+  display: block;
+  width: 30px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+/* .hamburger__middle {
+  width: 20px;
+  margin-left: 10px;
+} */
+
+.dropdown {
+  margin-top: -20px;
+  height: 0px;
+  background-color: lightgreen;
+  transition: height 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dropdown-after {
+  height: calc(100vh - 50px);
+  transition: height 0.2s ease;
+}
+
+.navlist {
+  list-style: none;
+}
+
+.navlistitem {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+}
+
+.navlistitem li {
+  color: #ffffff;
 }
 </style>

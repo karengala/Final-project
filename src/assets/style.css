@@ -213,11 +213,11 @@ textarea::-webkit-scrollbar {
   width: 0px;
 }
 .editInfoContainer {
-  border: 1px solid white;
   display: flex;
   flex-direction: column;
   width: 89%;
   margin-left: 15px;
+  gap: 4px;
 }
 .titleContainer {
   /* width: 18vw; */
@@ -244,13 +244,16 @@ textarea::-webkit-scrollbar {
   word-wrap: break-word;
   margin: 7px;
 }
-.titleContainer :last-child {
+/* .titleContainer :last-child {
   width: 23%;
-}
+} */
 .textareaEditMobile {
-  width: 19vw;
+  width: 18.2vw;
   word-wrap: break-word;
   margin: 7px;
+}
+.buttonsEditModile {
+  display: none;
 }
 /* Account View */
 
@@ -315,6 +318,7 @@ textarea::-webkit-scrollbar {
   .editInfoContainer {
     position: fixed;
     width: 100vw;
+
     /* height: 100vh; */
     background-color: rgb(18, 18, 18);
     margin-left: 0px;
@@ -328,7 +332,8 @@ textarea::-webkit-scrollbar {
 
   .titleContainer {
     width: 94vw;
-    margin: 10px;
+
+    border: none;
   }
 
   .textareaEditMobile {
@@ -338,15 +343,30 @@ textarea::-webkit-scrollbar {
   }
   .descriptionContainer {
     width: 94vw;
+    border: none;
   }
 
   .titleContainer :first-child {
     width: 97%;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 700;
+    word-wrap: break-word;
     /*  margin: 20px; */
   }
+  .buttonsEditModile img {
+    height: 23px;
+    filter: invert(1);
+  }
+  .buttonsEditModile {
+    display: flex;
+    width: 94%;
+    margin: 23px;
+    margin-bottom: 0px;
+    justify-content: space-between;
+  }
   .titleContainer :last-child {
-    width: 13%;
-    /* margin: 20px; */
+    display: none;
   }
 
   /* Account View */
