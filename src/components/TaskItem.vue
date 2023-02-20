@@ -1,8 +1,8 @@
 <template>
   <section id="containerForEachTask">
-    <!-- <div class="dateContainer">
+    <div class="dateContainer">
       {{ task.id }}
-    </div> -->
+    </div>
     <div class="markAsComplete">
       <button
         :class="props.task.is_complete ? 'unCompleted' : 'completed'"
@@ -36,25 +36,37 @@
          :disabled="testProp ? true : false" 
         edit
       </button> -->
+      <!-- <div class="containerEditFlex"> -->
       <img
         src="https://th.bing.com/th/id/R.e3956e57360db26f1bfb076dc8c6b993?rik=nnqKo%2fU0PIULJQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_194863.png&ehk=rBnNrjucmayGnMHH13LzpLSRgf09IrhS3tDD49erb6U%3d&risl=&pid=ImgRaw&r=0"
         alt="editIcon"
         @click="showInput"
         class="editIcon"
       />
-      <div v-if="inputContainer" class="editInfoContainer">
+
+      <!-- INTENTARLO CON OTRO FLEX DENTRO DE ESTE -->
+      <!-- <div v-if="inputContainer" class="editInfoContainer">
+          <input type="text" v-model="currentTaskTitle" />
+          <input type="text" v-model="currentTaskDescription" />
+          <button @click="editTask">edit task</button>
+        </div> -->
+    </div>
+    <!-- </div> -->
+    <div v-if="inputContainer" class="editInfoContainer">
+      <div class="titleContainer">
         <input type="text" v-model="currentTaskTitle" />
-        <input type="text" v-model="currentTaskDescription" />
-        <button @click="editTask">edit task</button>
+        <button @click="editTask">ok</button>
+      </div>
+      <div class="descriptionContainer">
+        <textarea
+          class="textareaEditMobile"
+          type="text"
+          v-model="currentTaskDescription"
+        />
       </div>
 
-      <!-- CREAR UNA FUNCION QUE REDIRIJA A OTRA VIEW CON UNOS INPUTS PARA EDITAR ESA TASK (en mobile) -->
+      <!-- <button @click="editTask">edit task</button> -->
     </div>
-    <!-- <div v-if="inputContainer" class="editInfoContainer">
-      <input type="text" v-model="currentTaskTitle" />
-      <input type="text" v-model="currentTaskDescription" />
-      <button @click="editTask">edit task</button>
-    </div> -->
   </section>
 </template>
 
@@ -127,6 +139,9 @@ const showModalToggle = () => {
   width: 16vw;
 
 } */
+.containerEditFlex {
+  display: flex;
+}
 </style>
 
 <!--
