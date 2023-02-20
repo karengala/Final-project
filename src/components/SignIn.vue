@@ -82,12 +82,12 @@ const showPassword = () => {
 const email = ref("");
 const password = ref("");
 const redirect = useRouter();
+const errorMsg = ref("");
 
 const signIn = async () => {
-  if (email.value) {
+  if (password.value === password.value) {
     try {
       await useUserStore().signIn(email.value, password.value);
-
       redirect.push({ path: "/" });
     } catch (error) {
       // displays error message
@@ -97,9 +97,21 @@ const signIn = async () => {
         errorMsg.value = null;
       }, 5000);
     }
-    /*  return; */
+    return;
   }
   errorMsg.value = "error";
+};
+
+///MENSAJE DE CONTRASEÑA INCORRECTA
+const validarContraseña = () => {
+  if (password !== password.value) {
+    alert(
+      "EL email o contraseña es incorrecto. Por favor, inténtalo de nuevo."
+    );
+  } else {
+    // Assuming that signIn is a function that logs in the user
+    signIn();
+  }
 };
 </script>
 

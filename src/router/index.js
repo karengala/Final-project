@@ -17,7 +17,6 @@ const routes = [
   },
   { path: "/", component: Home },
   { path: "/account", component: Account },
-  /* PREGUNTAR SI VA COMO HERMANO O CMO HIJO DEL ACCOUNT*/
   { path: "/edit", component: Edit },
 ];
 

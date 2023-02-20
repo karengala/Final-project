@@ -1,8 +1,8 @@
 <template>
   <Nav />
   <h1>username: {{ username }}</h1>
-  <!-- <h2>Name: {{ name }}</h2>
-  <h2>website: {{ website }}</h2> -->
+  <h2>Name: {{ name }}</h2>
+  <h2>website: {{ website }}</h2>
   <img
     :src="
       avatar_url
@@ -45,13 +45,8 @@ async function getProfile() {
 //funcion para editar infouser conectandose con supabase
 const editProfile = async () => {
   console.log("click");
-  /* console.log(editProfileObject); */
 
-  await userStore.editProfile(
-    editProfileObject.username.value,
-    editProfileObject.avatar_url.value,
-    editProfileObject.website.value
-  );
+  await userStore.editProfile(username.value, avatar_url.value, website.value);
   console.log("HELLO");
 };
 

@@ -3,6 +3,7 @@
 * {
   color: #fafafa;
   /* font-family: Questrial; */
+  box-sizing: border-box;
 }
 body {
   background: rgb(18, 18, 18);
@@ -141,6 +142,7 @@ select:-webkit-autofill:focus {
   width: 76%;
   gap: 3px;
   margin: -4px 6px;
+  word-wrap: break-word;
 }
 .editIcon,
 .deleteIcon {
@@ -257,7 +259,7 @@ textarea::-webkit-scrollbar {
     flex-direction: row;
     align-items: center;
     width: 95%;
-    height: 60px;
+    /* height: 60px; */
     padding: 10px;
     background-color: transparent;
   }
@@ -267,6 +269,7 @@ textarea::-webkit-scrollbar {
   }
   .markAsComplete {
     width: 55%;
+    justify-content: flex-start;
   }
   .dateContainer {
     border-right: 1px solid grey;
@@ -303,6 +306,15 @@ textarea::-webkit-scrollbar {
     border: 1px solid;
     background-color: blue;
     display: flex;
+  }
+  .editInfoContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
 
   /* Account View */

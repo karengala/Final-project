@@ -91,4 +91,38 @@ textarea.addEventListener("keyup", (e) => {
 }); */
 </script>
 
-<style></style>
+<style scooped>
+.hamburguer {
+  display: block;
+}
+
+.hamburguer.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguer.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburguer.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+  position: absolute;
+  top: -200%;
+  gap: 0;
+  flex-direction: column;
+  background-color: #c8c8c8;
+  width: 100%;
+  text-align: left;
+  transition: top 0.5s;
+  left: 0%;
+}
+
+.nav-menu li {
+  margin: 10px 0;
+  text-align: left;
+  margin-left: 30px;
+}
+</style>

@@ -22,7 +22,7 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 - **Store:** Pinia y Pinia Persist para el Log In
 - **Database:** Supabase
 
-## Seguimiento del proyecto:
+## Seguimiento del proyecto: 🔥
 
 ### 7 Febrero:
 
@@ -54,6 +54,14 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 - Reorganizar botones Delete/Complete/Edit segun diseño
 - Acabar account.vue
 - Encontar la manera de reflejar el dia de publicacion
+- Adaptar el diseño a la version Desktop
+- Actualizar Readme
+
+### 20 Febrero:
+
+- Implementar menu hamburguesa para versiones moviles.
+- corregir detalles de responsive y CSS
+- Comenzar con la parte del perfil de usuario ~~(opcional)~~
 - Adaptar el diseño a la version Desktop
 - Actualizar Readme
 

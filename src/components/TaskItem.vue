@@ -1,8 +1,8 @@
 <template>
   <section id="containerForEachTask">
-    <div class="dateContainer">
+    <!-- <div class="dateContainer">
       {{ task.id }}
-    </div>
+    </div> -->
     <div class="markAsComplete">
       <button
         :class="props.task.is_complete ? 'unCompleted' : 'completed'"
@@ -42,14 +42,20 @@
         @click="showInput"
         class="editIcon"
       />
+      <div v-if="inputContainer" class="editInfoContainer">
+        <input type="text" v-model="currentTaskTitle" />
+        <input type="text" v-model="currentTaskDescription" />
+        <button @click="editTask">edit task</button>
+      </div>
+
       <!-- CREAR UNA FUNCION QUE REDIRIJA A OTRA VIEW CON UNOS INPUTS PARA EDITAR ESA TASK (en mobile) -->
     </div>
+    <!-- <div v-if="inputContainer" class="editInfoContainer">
+      <input type="text" v-model="currentTaskTitle" />
+      <input type="text" v-model="currentTaskDescription" />
+      <button @click="editTask">edit task</button>
+    </div> -->
   </section>
-  <div v-if="inputContainer" class="editInfoContainer">
-    <input type="text" v-model="currentTaskTitle" />
-    <input type="text" v-model="currentTaskDescription" />
-    <button @click="editTask">edit task</button>
-  </div>
 </template>
 
 <script setup>

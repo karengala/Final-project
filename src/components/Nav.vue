@@ -23,6 +23,11 @@
         </li>
       </ul>
     </div>
+    <div class="hamburguer">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
   </nav>
 </template>
 
@@ -56,6 +61,16 @@ const signOut = async () => {
     redirect.push({ path: "/auth/login" });
   } catch (error) {}
 };
+
+/* ---------------- HAMBURGER MENU ------------------ */
+/* const hamburguer = document.querySelector(".hamburguer")
+const navMenu = document.querySelector(".nav-menu")
+
+hamburguer.addEventListener("click", () => {
+    hamburguer.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+}) */
 </script>
 
 <style>
@@ -77,5 +92,21 @@ nav ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/*  ------------ HAMBURGUER ------------- */
+.hamburguer {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #5ccd1a;
 }
 </style>
