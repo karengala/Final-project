@@ -131,15 +131,17 @@ select:-webkit-autofill:focus {
 .completed {
   height: 15px;
   width: 15px;
-  border-radius: 50%;
   border: 1px solid rgb(253, 64, 26);
   background-color: #fafafa;
+  border-radius: 100%;
+  -webkit-appearance: none !important;
 }
 .unCompleted {
   background-color: gray;
   height: 15px;
   width: 15px;
   border-radius: 100%;
+  -webkit-appearance: none !important;
 }
 .modal {
   border: 2px solid;
