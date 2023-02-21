@@ -120,16 +120,27 @@ select:-webkit-autofill:focus {
   align-items: center;
   justify-content: space-between;
   list-style: none;
+  margin-top: 42px;
+  padding: 0px 13px;
 }
-
+.logOutButton {
+  text-align: end;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: underline;
+}
 .clase1 {
-  /*  background-color: rgb(253, 64, 26); */
+  /*  height: 21px; */
 }
 .clase2 {
   text-decoration: line-through;
+  filter: invert(1);
+}
+.clase3 {
+  display: none;
 }
 .completed {
-  height: 10px;
+  height: 13px;
   border: 1px solid white;
   background-color: #fafafa;
   border-radius: 100%;
@@ -138,7 +149,7 @@ select:-webkit-autofill:focus {
 }
 .unCompleted {
   background-color: gray;
-  height: 10px;
+  height: 13px;
   border: 1px solid gray;
   /* width: 11px; */
   border-radius: 100%;
@@ -184,7 +195,7 @@ select:-webkit-autofill:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 13px;
+  gap: 22px;
   width: 25%;
   /* height: 121px; */
   align-items: stretch;
@@ -202,6 +213,9 @@ select:-webkit-autofill:focus {
 }
 
 /* ----------------------------- NEW TASK -------------------------- */
+.add {
+  padding: 4px 14px;
+}
 .newTaskButton {
   background-color: transparent;
   color: rgb(253, 64, 26);
@@ -241,6 +255,7 @@ textarea::-webkit-scrollbar {
   width: 89%;
   margin-left: 15px;
   gap: 4px;
+  border: 1px solid yellow;
 }
 .titleContainer {
   display: flex;
@@ -264,7 +279,7 @@ textarea::-webkit-scrollbar {
   width: 23%;
 } */
 .textareaEditMobile {
-  width: 18.2vw;
+  width: 17.2vw;
   word-wrap: break-word;
   margin: 7px;
 }
@@ -287,7 +302,7 @@ textarea::-webkit-scrollbar {
     flex-direction: row;
     align-items: center;
     width: 95%;
-    /* height: 60px; */
+    gap: 13px;
     padding: 10px;
     background-color: transparent;
     justify-content: space-around;
@@ -319,7 +334,17 @@ textarea::-webkit-scrollbar {
     border: 0.7px solid grey;
   }
   /* -----------NEW TASK------------ */
+
   /* ------------ tasks ------------------*/
+  .clase2 {
+    filter: none;
+  }
+  .clase3 {
+    display: block;
+    height: 15px;
+    width: 15px;
+    filter: none;
+  }
   .buttonsInTasks {
     flex-direction: column;
     gap: 23px;

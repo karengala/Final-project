@@ -1,5 +1,5 @@
 <template>
-  <section id="containerForEachTask" draggable="true">
+  <section id="containerForEachTask">
     <!--  v-touch-swipe.mouse.left.prevent="swipeItemLeft"
     v-touch-swipe.mouse.right.prevent="swipeItemRight" :style="`transform:
     translatex(${itenOffset}px)`" -->
@@ -13,8 +13,8 @@
       <button
         :class="props.task.is_complete ? 'unCompleted' : 'completed'"
         @click="completeTask"
-      ></button
-      ><!-- :disabled="testProp ? true : false" -->
+      ></button>
+      <!-- :disabled="testProp ? true : false" -->
       <div class="taksTitle">
         <!-- <p v-if="testProp">{{ testProp }} testttt</p> -->
         <h3 :class="props.task.is_complete ? 'clase2' : 'clase1'">
@@ -33,6 +33,7 @@
         class="deleteIcon"
       />
       <!-- :disabled="testProp ? true : false" -->
+
       <div class="modal" v-if="showModal">
         <h2>Are you sure you want to delete?</h2>
         <button @click="deleteTask">Yes</button>
@@ -47,8 +48,10 @@
         src="https://th.bing.com/th/id/R.e3956e57360db26f1bfb076dc8c6b993?rik=nnqKo%2fU0PIULJQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_194863.png&ehk=rBnNrjucmayGnMHH13LzpLSRgf09IrhS3tDD49erb6U%3d&risl=&pid=ImgRaw&r=0"
         alt="editIcon"
         @click="showInput"
-        class="editIcon"
+        :class="props.task.is_complete ? 'clase3' : 'editIcon'"
       />
+      <!--  class="editIcon" -->
+      <!-- :disabled="testProp ? true : false" -->
 
       <!-- INTENTARLO CON OTRO FLEX DENTRO DE ESTE -->
       <!-- <div v-if="inputContainer" class="editInfoContainer">
@@ -85,7 +88,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onUpdated, watch } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
@@ -95,7 +98,7 @@ const emit = defineEmits(["childComplete", "editChild"]);
 
 // funcion para completar tarea que se encarga de enviar la info al padre
 const completeTask = () => {
-  /* console.log("click"); */
+  /*console.log("click"); */
   /* console.log(props.task.is_complete); */
   emit("childComplete", props.task);
 };
@@ -106,7 +109,7 @@ const taskStore = useTaskStore();
 // variable para recibir informacion de la tarea mediante prop como .objeto
 const props = defineProps({
   task: Object,
-  //testProp: String,
+  /*  testProp: String, */
 });
 
 const completed = ref(false);
@@ -118,12 +121,15 @@ const currentTaskDescription = ref("");
 const router = useRouter();
 
 const showInput = () => {
-  console.log("click");
-  inputContainer.value = !inputContainer.value;
+  console.log("click edit");
+  if (!props.task.is_complete) {
+    inputContainer.value = !inputContainer.value;
+  }
   currentTaskTitle.value = props.task.title;
   currentTaskDescription.value = props.task.description;
 };
 //funcion con validacion + envio de datos y eventos mediante emit
+
 const editTask = () => {
   if (
     currentTaskTitle.value.length === 0 ||
@@ -148,6 +154,7 @@ const deleteTask = async () => {
 
 const showModal = ref(false);
 const showModalToggle = () => {
+  console.log("click borrar");
   showModal.value = !showModal.value;
 };
 
@@ -155,9 +162,27 @@ const editTaskBack = () => {
   inputContainer.value = !inputContainer.value;
 };
 
+// textarea
+
+onUpdated(() => {
+  if (inputContainer.value) {
+    const textarea = document.querySelectorAll(".textareaEditMobile");
+    textarea.forEach((area) => {
+      area.addEventListener("keyup", (e) => {
+        area.style.height = "5px";
+        console.log("TEXTAREA HEIGHT", e.target.scrollHeight);
+        let scHeight = e.target.scrollHeight;
+        area.style.height = `${scHeight}px`;
+      });
+    });
+  }
+});
+
+/* watch(inputContainer, () => {}); */
+
 //touch events para borrar tarea PRUEBA
 
-let itemOffset = ref(0);
+/* let itemOffset = ref(0);
 let swipeOffsetMax = 0;
 
 const swipeItemLeft = (e) => {
@@ -182,7 +207,7 @@ const moveToOffsetMax = () => {
   setTimeout(() => {
     store.budgets.actions.enableDraggable();
   }, 300);
-};
+}; */
 </script>
 
 <style scoped>

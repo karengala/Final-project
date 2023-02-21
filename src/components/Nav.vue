@@ -19,7 +19,7 @@
         <router-link to="/account">Your Account</router-link>
       </li>
       <li class="navlistitem">
-        <button @click="signOut" class="button">Log out</button>
+        <button @click="signOut" class="logOutButton">Log out</button>
       </li>
     </ul>
   </div>

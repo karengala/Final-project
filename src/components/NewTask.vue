@@ -92,15 +92,16 @@ onUpdated(() => {
     const textarea = document.querySelector("textarea");
     console.log(textarea);
     textarea.addEventListener("keyup", (e) => {
-      textarea.style.height = "auto";
+      textarea.style.height = "5px";
+      console.log("TEXTAREA HEIGHT", e.target.scrollHeight);
       let scHeight = e.target.scrollHeight;
       textarea.style.height = `${scHeight}px`;
     });
   }
 });
 </script>
-<style scooped>
+<style scoped>
 .input-textarea {
-  height: 12px;
+  height: 20px;
 }
 </style>
