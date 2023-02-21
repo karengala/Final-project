@@ -139,7 +139,7 @@ select:-webkit-autofill:focus {
 .taksTitle {
   display: flex;
   flex-direction: column;
-  width: 76%;
+  width: 91%;
   gap: 3px;
   margin: -4px 6px;
   word-wrap: break-word;
@@ -288,11 +288,11 @@ textarea::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     font-size: 66px;
-    padding-right: 10px;
+    /* padding-right: 10px; */
     font-family: Montserrat;
     font-weight: 800;
     width: 31%;
-    align-items: center;
+    /*  align-items: center; */
   }
   /* -----------NEW TASK------------ */
   /* ------------ tasks ------------------*/

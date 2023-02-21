@@ -106,7 +106,6 @@ hamburguer.addEventListener("click", () => {
 }
 
 nav {
-  background-color: lightgray;
   display: flex;
   /* width: 179%; */
   flex-direction: column;

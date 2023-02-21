@@ -61,18 +61,19 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 
 - Implementar menu hamburguesa para versiones moviles.
 - corregir detalles de responsive y CSS
-- Comenzar con la parte del perfil de usuario ~~(opcional)~~
 - Adaptar el diseño a la version Desktop
 - Actualizar Readme
 
-<!-- ### 24 de agosto:
-* Implementar menu hamburguesa para versiones moviles
-* Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Hecha", esta se tacha
-* Subir el proyecto a Vercel para que este disponible para todo el mundo
-* Comenzar con la parte del perfil de usuario ~~(opcional)~~
+### 21 Febrero:
 
-### 25 de agosto:
+- Acabar menu hamburguesa - No funciona
+- corregir detalles de responsive y CSS
+- Acabar con la parte del perfil de usuario
+- Touch event para borrar tarea.
+- Actualizar Readme
+
+<!-- ### 25 de agosto:
 * Repaso a la pagina y todas sus funcionalidades
 * Preparar el README con la descripcion del proyecto
 * Preparar la presentacion del proyecto
-* Implementar funcionalidad del Timer  -->
+* Implementar funcionalidad del Timer   -->

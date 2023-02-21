@@ -1,5 +1,10 @@
 <template>
-  <section id="containerForEachTask" draggable="true">
+  <section
+    id="containerForEachTask"
+    v-touch-swipe.mouse.left.prevent="swipeItemLeft"
+    v-touch-swipe.mouse.right.prevent="swipeItemRight"
+    :style="`transform: translatex(${itenOffset}px)`"
+  >
     <div class="dateContainer">
       {{ task.id }}
     </div>
@@ -148,13 +153,21 @@ const showModalToggle = () => {
 const editTaskBack = () => {
   inputContainer.value = !inputContainer.value;
 };
+
+let itemOffset = ref(0);
+let swipeOffsetMax = 0;
+
+const swipeItemLeft = (e) => {
+  if (e.distance.x >= 5) {
+    moveToOffsetMin();
+  }
+};
+const swipeItemRight = (e) => {
+  moveToOffsetMax();
+};
 </script>
 
 <style scoped>
-/* .editInfoContainer {
-  width: 16vw;
-
-} */
 .containerEditFlex {
   display: flex;
 }
