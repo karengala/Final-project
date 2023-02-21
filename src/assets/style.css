@@ -139,7 +139,7 @@ select:-webkit-autofill:focus {
   background-color: gray;
   height: 15px;
   width: 15px;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 .modal {
   border: 2px solid;
