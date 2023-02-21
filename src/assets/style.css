@@ -140,7 +140,7 @@ select:-webkit-autofill:focus {
   display: none;
 }
 .completed {
-  height: 13px;
+  height: 14px;
   border: 1px solid white;
   background-color: #fafafa;
   border-radius: 100%;
@@ -149,7 +149,7 @@ select:-webkit-autofill:focus {
 }
 .unCompleted {
   background-color: gray;
-  height: 13px;
+  height: 14px;
   border: 1px solid gray;
   /* width: 11px; */
   border-radius: 100%;
@@ -169,7 +169,7 @@ select:-webkit-autofill:focus {
 .taksTitle {
   display: flex;
   flex-direction: column;
-  width: 91%;
+  width: 88%;
   gap: 8px;
   margin: -6px 6px;
   word-wrap: break-word;
@@ -226,7 +226,9 @@ select:-webkit-autofill:focus {
 }
 .newtTaskInput {
   display: flex;
-  padding: 25px;
+  /* padding: 25px; */
+  padding-left: 8px;
+  padding-top: 15px;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -315,7 +317,7 @@ textarea::-webkit-scrollbar {
   .markAsComplete {
     width: 64%;
     justify-content: flex-start;
-    margin-left: 5px;
+    /* margin-left: 5px; */
   }
   .dateContainer {
     display: flex;
@@ -324,7 +326,7 @@ textarea::-webkit-scrollbar {
     /* padding-right: 10px; */
     font-family: Montserrat;
     font-weight: 800;
-    width: 57px;
+    width: 30px;
     align-items: center;
     transform: rotate(-90deg);
   }
@@ -334,7 +336,10 @@ textarea::-webkit-scrollbar {
     border: 0.7px solid grey;
   }
   /* -----------NEW TASK------------ */
-
+  .newTaskInput {
+    padding-left: 8px;
+    padding-top: 15px;
+  }
   /* ------------ tasks ------------------*/
   .clase2 {
     filter: none;
