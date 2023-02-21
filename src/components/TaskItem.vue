@@ -3,9 +3,12 @@
     <!--  v-touch-swipe.mouse.left.prevent="swipeItemLeft"
     v-touch-swipe.mouse.right.prevent="swipeItemRight" :style="`transform:
     translatex(${itenOffset}px)`" -->
+    <!--  <div class="date"> -->
     <div class="dateContainer">
       {{ task.id }}
     </div>
+    <div class="linea"></div>
+    <!-- </div> -->
     <div class="markAsComplete">
       <button
         :class="props.task.is_complete ? 'unCompleted' : 'completed'"

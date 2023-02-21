@@ -14,12 +14,10 @@
       <label for="description">descrption</label>
       <div class="input-field">
         <textarea
-          id="prueba"
-          class="input-text"
+          class="input-textarea"
           type="text"
           placeholder=""
           v-model="description"
-          :rows="filas"
         />
       </div>
     </div>
@@ -28,7 +26,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, onUpdated, ref } from "vue";
 import { useTaskStore } from "../stores/task";
 
 const taskStore = useTaskStore();
@@ -68,6 +66,7 @@ const emit = defineEmits(["showToggleValue"]);
 /* const textarea = ref(""); */
 
 const showToggleTask = ref(false);
+/*
 const showToggleNewTask = () => {
   showToggleTask.value = !showToggleTask.value;
   emit("showToggleValue", showToggleTask.value);
@@ -82,47 +81,26 @@ const showToggleNewTask = () => {
       20
     );
   });
+}; */
+
+const showToggleNewTask = () => {
+  showToggleTask.value = !showToggleTask.value;
 };
 
-/* const textarea = document.getElementsByClassName("tryTArea");
-textarea.addEventListener("keyup", (e) => {
-  let scHeight = e.target.scrollHeight;
-  textarea.style.height = `${scHeight}px`;
-}); */
+onUpdated(() => {
+  if (showToggleTask.value) {
+    const textarea = document.querySelector("textarea");
+    console.log(textarea);
+    textarea.addEventListener("keyup", (e) => {
+      textarea.style.height = "auto";
+      let scHeight = e.target.scrollHeight;
+      textarea.style.height = `${scHeight}px`;
+    });
+  }
+});
 </script>
-
 <style scooped>
-.hamburguer {
-  display: block;
-}
-
-.hamburguer.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburguer.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.hamburguer.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-.nav-menu {
-  position: absolute;
-  top: -200%;
-  gap: 0;
-  flex-direction: column;
-  background-color: #c8c8c8;
-  width: 100%;
-  text-align: left;
-  transition: top 0.5s;
-  left: 0%;
-}
-
-.nav-menu li {
-  margin: 10px 0;
-  text-align: left;
-  margin-left: 30px;
+.input-textarea {
+  height: 12px;
 }
 </style>
