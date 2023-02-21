@@ -1,10 +1,8 @@
 <template>
-  <section
-    id="containerForEachTask"
-    v-touch-swipe.mouse.left.prevent="swipeItemLeft"
-    v-touch-swipe.mouse.right.prevent="swipeItemRight"
-    :style="`transform: translatex(${itenOffset}px)`"
-  >
+  <section id="containerForEachTask" draggable="true">
+    <!--  v-touch-swipe.mouse.left.prevent="swipeItemLeft"
+    v-touch-swipe.mouse.right.prevent="swipeItemRight" :style="`transform:
+    translatex(${itenOffset}px)`" -->
     <div class="dateContainer">
       {{ task.id }}
     </div>
@@ -154,6 +152,8 @@ const editTaskBack = () => {
   inputContainer.value = !inputContainer.value;
 };
 
+//touch events para borrar tarea PRUEBA
+
 let itemOffset = ref(0);
 let swipeOffsetMax = 0;
 
@@ -164,6 +164,21 @@ const swipeItemLeft = (e) => {
 };
 const swipeItemRight = (e) => {
   moveToOffsetMax();
+};
+
+const moveToOffsetMin = () => {
+  itemOffset.value = store.budgets.state.swipeOffsetMin;
+  store.budgets.actions.disableDraggable();
+};
+
+const moveToOffsetMax = () => {
+  itemOffset.value = swipeOffsetMax;
+
+  dragFix();
+
+  setTimeout(() => {
+    store.budgets.actions.enableDraggable();
+  }, 300);
 };
 </script>
 

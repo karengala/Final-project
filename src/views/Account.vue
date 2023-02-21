@@ -12,7 +12,6 @@
     alt="Profile picture"
     class="profilePicture"
   />
-  <button>edit</button>
   <router-link to="/edit">edit</router-link>
 </template>
 
