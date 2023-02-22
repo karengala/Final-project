@@ -1,5 +1,5 @@
 <template>
-  EDIIIT INPUTS <br />
+  <Nav />
   <img
     :src="
       avatar_url
@@ -17,6 +17,19 @@
     <input type="text" placeholder="Add a username" v-model="username" />
     <label for="website">website: </label>
     <input type="text" placeholder="Add a website" v-model="website" />
+    <div>
+      <label for="profile_pic">Choose file to upload</label>
+      <input
+        type="file"
+        id="profile_pic"
+        name="profile_pic"
+        accept=".jpg, .jpeg, .png"
+      />
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+
     <button @click="editProfile">Save Changes</button>
   </div>
 </template>

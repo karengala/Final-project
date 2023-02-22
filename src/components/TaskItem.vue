@@ -1,5 +1,6 @@
 <template>
-  <section id="containerForEachTask">
+  <section id="containerForEachTask" class="swipeElement">
+    <p v-if="swipeDetected">Swipe left detected</p>
     <!--  v-touch-swipe.mouse.left.prevent="swipeItemLeft"
     v-touch-swipe.mouse.right.prevent="swipeItemRight" :style="`transform:
     translatex(${itenOffset}px)`" -->
@@ -178,9 +179,19 @@ onUpdated(() => {
   }
 });
 
-/* watch(inputContainer, () => {}); */
-
 //touch events para borrar tarea PRUEBA
+
+/* const swipeDetected = ref(false);
+
+onMounted(() => {
+  const swipeElement = document.querySelector(".swipeElement");
+  console.log("mounted");
+  const mc = new Hammer(swipeElement);
+  mc.on("swipeleft", (ev) => {
+    console.log("swipe left detected");
+    swipeDetected.value = true;
+  });
+}); */
 
 /* let itemOffset = ref(0);
 let swipeOffsetMax = 0;

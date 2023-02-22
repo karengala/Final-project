@@ -140,7 +140,7 @@ select:-webkit-autofill:focus {
   display: none;
 }
 .completed {
-  height: 14px;
+  height: 15px;
   border: 1px solid white;
   background-color: #fafafa;
   border-radius: 100%;
@@ -149,7 +149,7 @@ select:-webkit-autofill:focus {
 }
 .unCompleted {
   background-color: gray;
-  height: 14px;
+  height: 15px;
   border: 1px solid gray;
   /* width: 11px; */
   border-radius: 100%;
@@ -432,6 +432,8 @@ textarea::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    justify-content: space-between;
+    /* margin-bottom: 19px; */
   }
   .navbar button {
     cursor: pointer;

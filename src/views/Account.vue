@@ -1,18 +1,20 @@
 <template>
   <Nav />
-  <h1>username: {{ username }}</h1>
-  <h2>Name: {{ name }}</h2>
-  <h2>website: {{ website }}</h2>
-  <img
-    :src="
-      avatar_url
-        ? avatar_url
-        : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
-    "
-    alt="Profile picture"
-    class="profilePicture"
-  />
-  <router-link to="/edit">edit</router-link>
+  <div class="info-profile">
+    <h1>username: {{ username }}</h1>
+    <h2>Name: {{ name }}</h2>
+    <h2>website: {{ website }}</h2>
+    <img
+      :src="
+        avatar_url
+          ? avatar_url
+          : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
+      "
+      alt="Profile picture"
+      class="profilePicture"
+    />
+    <router-link to="/edit">edit</router-link>
+  </div>
 </template>
 
 <script setup>
@@ -60,6 +62,11 @@ async function signOut() {
     loading.value = false;
   }
 }
+
+//Redirect
+/*
+Accede al historial del usuario y vuelve a la posición -1.
+*/
 </script>
 
 <style scooped>
@@ -79,4 +86,12 @@ async function signOut() {
   width: 100%;
   padding: 9px;
 }
+.info-profile {
+  padding: 0px 13px;
+}
+
+/* .backIcon {
+  height: 23px;
+  filter: invert(1);
+} */
 </style>

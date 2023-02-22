@@ -1,6 +1,12 @@
 <template>
   <!--  <div class="container-fluid" id="app"> -->
   <nav class="navbar">
+    <!--  <img
+      @click="editTaskBack"
+      src="https://cdn.onlinewebfonts.com/svg/img_53616.png"
+      alt="BackIcon"
+      class="backIcon"
+    /> -->
     <!-- <div class="hamburger-wrap"> -->
     <button class="hamburger" type="button" @click="showMenu">
       <span class="bar"></span>
@@ -72,6 +78,8 @@ const signOut = async () => {
     redirect.push({ path: "/auth/login" });
   } catch (error) {}
 };
+
+const back = () => {};
 
 /* ---------------- HAMBURGER MENU ------------------ */
 

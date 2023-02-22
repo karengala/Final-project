@@ -70,9 +70,16 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 
 - Acabar menu hamburguesa - No funciona
 - corregir detalles de responsive y CSS
-- Acabar con la parte del perfil de usuario
-- Touch event para borrar tarea.
+- Investigar Touch event para borrar tarea.
+- resize del textarea.
 - Actualizar Readme
+
+### 22 Febrero:
+
+- Implementar Touch event para borrar tarea.
+- corregir detalles de responsive y CSS
+- Foto de perfil de usuario
+- Alert de la contraseña incorrecta al hacer sign in
 
 <!-- ### 25 de agosto:
 * Repaso a la pagina y todas sus funcionalidades
