@@ -1,5 +1,5 @@
 <template>
-  <section id="containerForEachTask" class="swipeElement">
+  <section id="containerForEachTask" :class="newClass">
     <p v-if="swipeDetected">Swipe left detected</p>
     <!--  v-touch-swipe.mouse.left.prevent="swipeItemLeft"
     v-touch-swipe.mouse.right.prevent="swipeItemRight" :style="`transform:
@@ -62,10 +62,13 @@
         </div> -->
     </div>
     <!-- </div> -->
-    <div v-if="inputContainer" class="editInfoContainer">
+    <div
+      v-if="inputContainer"
+      class="editInfoContainer editInfoContainerMobile"
+    >
       <div class="buttonsEditModile">
         <img
-          @click="editTaskBack"
+          @click="showInput"
           src="https://cdn.onlinewebfonts.com/svg/img_53616.png"
           alt="BackIcon"
         />
@@ -89,13 +92,17 @@
 </template>
 
 <script setup>
-import { ref, onUpdated, watch } from "vue";
+import { ref, onUpdated, onMounted, watch } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
+import Hammer from "hammerjs";
+
+let mc;
 
 //Definir emits para pasar logica y eventos hacia componentes padres
 const emit = defineEmits(["childComplete", "editChild"]);
+const newClass = "patata" + props.task.id;
 
 // funcion para completar tarea que se encarga de enviar la info al padre
 const completeTask = () => {
@@ -125,6 +132,13 @@ const showInput = () => {
   console.log("click edit");
   if (!props.task.is_complete) {
     inputContainer.value = !inputContainer.value;
+    if (inputContainer.value === false && window.innerWidth <= 766) {
+      mc.on("swipeleft", (ev) => {
+        console.log("swipe left detected");
+        swipeDetected.value = true;
+        deleteTask();
+      });
+    } else mc.off("swipeleft");
   }
   currentTaskTitle.value = props.task.title;
   currentTaskDescription.value = props.task.description;
@@ -159,10 +173,6 @@ const showModalToggle = () => {
   showModal.value = !showModal.value;
 };
 
-const editTaskBack = () => {
-  inputContainer.value = !inputContainer.value;
-};
-
 // textarea
 
 onUpdated(() => {
@@ -179,46 +189,39 @@ onUpdated(() => {
   }
 });
 
+/* ----- sacar todo lo del onUpdate y meterlo en una funcion.
+luego dentro de onypdate llamar a la funion ---().
+y despuesta al modal del edit task llamar al onUpdate.-------- */
+
 //touch events para borrar tarea PRUEBA
 
-/* const swipeDetected = ref(false);
+const swipeDetected = ref(false);
 
 onMounted(() => {
-  const swipeElement = document.querySelector(".swipeElement");
+  const swipeElement = document.querySelector("." + newClass);
   console.log("mounted");
-  const mc = new Hammer(swipeElement);
-  mc.on("swipeleft", (ev) => {
-    console.log("swipe left detected");
-    swipeDetected.value = true;
-  });
-}); */
-
-/* let itemOffset = ref(0);
-let swipeOffsetMax = 0;
-
-const swipeItemLeft = (e) => {
-  if (e.distance.x >= 5) {
-    moveToOffsetMin();
+  mc = new Hammer(swipeElement);
+  if (window.innerWidth <= 766) {
+    mc.on("swipeleft", (ev) => {
+      console.log("swipe left detected");
+      swipeDetected.value = true;
+      deleteTask();
+    });
   }
-};
-const swipeItemRight = (e) => {
-  moveToOffsetMax();
-};
+});
 
-const moveToOffsetMin = () => {
-  itemOffset.value = store.budgets.state.swipeOffsetMin;
-  store.budgets.actions.disableDraggable();
-};
-
-const moveToOffsetMax = () => {
-  itemOffset.value = swipeOffsetMax;
-
-  dragFix();
-
-  setTimeout(() => {
-    store.budgets.actions.enableDraggable();
-  }, 300);
-}; */
+window.addEventListener("resize", () => {
+  console.log("evento", window.innerWidth);
+  if (window.innerWidth <= 766) {
+    mc.on("swipeleft", (ev) => {
+      console.log("swipe left detected");
+      swipeDetected.value = true;
+      deleteTask();
+    });
+  } else {
+    mc.off("swipeleft");
+  }
+});
 </script>
 
 <style scoped>

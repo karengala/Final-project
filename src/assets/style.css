@@ -130,14 +130,17 @@ select:-webkit-autofill:focus {
   text-decoration: underline;
 }
 .clase1 {
-  /*  height: 21px; */
+  height: 21px;
 }
 .clase2 {
   text-decoration: line-through;
   filter: invert(1);
 }
 .clase3 {
-  display: none;
+  height: 21px;
+  opacity: 80%;
+  /* display: none; */
+  /*  */
 }
 .completed {
   height: 15px;
@@ -372,11 +375,10 @@ textarea::-webkit-scrollbar {
     border: 1px solid rgb(253, 64, 26);
   }
 
-  .editInfoContainer {
+  .editInfoContainerMobile {
     position: fixed;
     width: 100vw;
-
-    /* height: 100vh; */
+    height: 100vh;
     background-color: rgb(18, 18, 18);
     margin-left: 0px;
     top: 0;
@@ -384,7 +386,7 @@ textarea::-webkit-scrollbar {
     z-index: 1;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
 
   .titleContainer {
