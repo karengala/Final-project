@@ -1,9 +1,5 @@
 <template>
   <section id="containerForEachTask" :class="newClass">
-    <p v-if="swipeDetected">Swipe left detected</p>
-    <!--  v-touch-swipe.mouse.left.prevent="swipeItemLeft"
-    v-touch-swipe.mouse.right.prevent="swipeItemRight" :style="`transform:
-    translatex(${itenOffset}px)`" -->
     <!--  <div class="date"> -->
     <div class="dateContainer">
       {{ task.id }}
@@ -152,13 +148,13 @@ const editTask = () => {
   ) {
     alert("Title or Description can not be empty");
   } else {
-    inputContainer.value = !inputContainer.value;
     const newTaskEdited = {
       title: currentTaskTitle.value,
       description: currentTaskDescription.value,
       id: props.task.id,
     };
     emit("editChild", newTaskEdited);
+    showInput();
   }
 };
 

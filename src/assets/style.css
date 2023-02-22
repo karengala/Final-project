@@ -130,7 +130,7 @@ select:-webkit-autofill:focus {
   text-decoration: underline;
 }
 .clase1 {
-  height: 21px;
+  /* height: 21px; */
 }
 .clase2 {
   text-decoration: line-through;
@@ -138,6 +138,7 @@ select:-webkit-autofill:focus {
 }
 .clase3 {
   height: 21px;
+
   opacity: 80%;
   /* display: none; */
   /*  */
