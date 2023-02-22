@@ -30,12 +30,17 @@
         class="deleteIcon"
       />
       <!-- :disabled="testProp ? true : false" -->
-
-      <div class="modal" v-if="showModal">
-        <h2>Are you sure you want to delete?</h2>
-        <button @click="deleteTask">Yes</button>
-        <button @click="showModalToggle">Cancel</button>
+      <!--  <div id="popup1" class="overlay"> -->
+      <div class="overlay" v-if="showModal">
+        <div class="popup">
+          <h2>Are you sure you want to delete?</h2>
+          <a class="close" @click="showModalToggle" href="#">&times;</a>
+          <button class="buttonYes" @click="deleteTask">Yes</button>
+          <!-- <button @click="showModalToggle">Cancel</button> -->
+        </div>
       </div>
+
+      <!-- </div> -->
       <!--  <button @click="showInput">
          :disabled="testProp ? true : false" 
         edit
@@ -171,23 +176,30 @@ const showModalToggle = () => {
 
 // textarea
 
-onUpdated(() => {
+/* onUpdated(() => {
+  resizeTextarea();
+  console.log("hello resize otuside");
+}); */
+
+const resizeTextarea = () => {
   if (inputContainer.value) {
     const textarea = document.querySelectorAll(".textareaEditMobile");
     textarea.forEach((area) => {
-      area.addEventListener("keyup", (e) => {
+      area.style.height = "5px";
+      /* console.log("TEXTAREA HEIGHT", e.target.scrollHeight); */
+      let scHeight = area.scrollHeight;
+      area.style.height = `${scHeight}px`;
+      /* console.log("hello resize otuside"); */
+      /*  area.addEventListener("keyup", (e) => {
         area.style.height = "5px";
-        console.log("TEXTAREA HEIGHT", e.target.scrollHeight);
+        console.log("TEXTAREA HEIGHT", e.target);
         let scHeight = e.target.scrollHeight;
         area.style.height = `${scHeight}px`;
-      });
+       
+      }); */
     });
   }
-});
-
-/* ----- sacar todo lo del onUpdate y meterlo en una funcion.
-luego dentro de onypdate llamar a la funion ---().
-y despuesta al modal del edit task llamar al onUpdate.-------- */
+};
 
 //touch events para borrar tarea PRUEBA
 
@@ -220,7 +232,7 @@ window.addEventListener("resize", () => {
 });
 </script>
 
-<style scoped>
+<style>
 .containerEditFlex {
   display: flex;
 }

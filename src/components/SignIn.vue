@@ -33,6 +33,7 @@
               v-model="password"
               required
             />
+
             <img
               class="mostrar"
               @click.prevent="showPassword"
@@ -41,6 +42,9 @@
             />
           </div>
         </div>
+        <p class="incorrect-alert" v-if="errorMsg">
+          Email or Password not correct
+        </p>
         <button class="logInButton" type="submit">Sign In</button>
       </div>
     </form>
@@ -73,6 +77,9 @@ const showPassword = () => {
   userPassword.value = !userPassword.value;
 };
 
+const img = () => {
+  im;
+};
 // Arrow function to Signin user to supaBase
 /* const singIn = async () => {
  try {} catch (error) {}
@@ -115,4 +122,8 @@ const validarContraseña = () => {
 };
 </script>
 
-<style scooped></style>
+<style scooped>
+.incorrect-alert {
+  margin-top: 13px;
+}
+</style>

@@ -160,16 +160,17 @@ select:-webkit-autofill:focus {
   padding-right: 3px;
   -webkit-appearance: none !important;
 }
-.modal {
-  border: 2px solid;
+/* .modal {
+   border: 2px solid; 
   position: fixed;
-}
+} */
 .buttonsInTasks {
   display: flex;
   gap: 25px;
   justify-content: space-evenly;
   align-items: center;
 }
+
 .taksTitle {
   display: flex;
   flex-direction: column;
@@ -293,6 +294,68 @@ textarea::-webkit-scrollbar {
   display: none;
 }
 /* Account View */
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  z-index: 300;
+  transition: all 0.4s;
+  /* visibility: hidden;
+  opacity: 0; */
+}
+
+/* .overlay:target {
+  visibility: visible;
+  opacity: 1;
+} */
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  /* transition: all 5s ease-in-out; */
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup button {
+  color: #333;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  /*  transition: all 200ms; */
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: rgb(253, 64, 26);
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+.buttonYes {
+  border: 1px solid;
+  border-radius: 25px;
+  padding: 4px 7px;
+  cursor: pointer;
+}
 
 /* ------------------------- Smaller than 766px (mobile) ------------------------- */
 @media (max-width: 766px) {
@@ -426,6 +489,10 @@ textarea::-webkit-scrollbar {
     justify-content: space-between;
   }
   .titleContainer :last-child {
+    display: none;
+  }
+  .overlay,
+  .popup {
     display: none;
   }
 
