@@ -1,6 +1,6 @@
 <template>
   <button @click="showToggleNewTask" class="newTaskButton">+ Add Task</button>
-  <section v-if="showToggleTask" class="newtTaskInput">
+  <section v-if="showToggleTask" class="newtTaskInput slide-bottom">
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>

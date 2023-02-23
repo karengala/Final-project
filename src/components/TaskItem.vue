@@ -17,6 +17,7 @@
         <h3 :class="props.task.is_complete ? 'clase2' : 'clase1'">
           {{ task.title }}
         </h3>
+        <h4 class="idContainer"></h4>
         <p :class="props.task.is_complete ? 'clase2' : 'clase1'">
           {{ task.description }}
         </p>

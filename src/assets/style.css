@@ -149,7 +149,7 @@ select:-webkit-autofill:focus {
   background-color: #fafafa;
   border-radius: 100%;
   -webkit-appearance: none !important;
-  padding-right: 3px;
+  /* padding-right: 0px; */
 }
 .unCompleted {
   background-color: gray;
@@ -157,7 +157,7 @@ select:-webkit-autofill:focus {
   border: 1px solid gray;
   /* width: 11px; */
   border-radius: 100%;
-  padding-right: 3px;
+  /* padding-right: 3px; */
   -webkit-appearance: none !important;
 }
 /* .modal {
@@ -174,9 +174,9 @@ select:-webkit-autofill:focus {
 .taksTitle {
   display: flex;
   flex-direction: column;
-  width: 88%;
+  width: 85%;
   gap: 8px;
-  margin: -6px 6px;
+  margin: -4px 6px;
   word-wrap: break-word;
 }
 .editIcon,
@@ -231,14 +231,17 @@ select:-webkit-autofill:focus {
 }
 .newtTaskInput {
   display: flex;
-  /* padding: 25px; */
-  padding-left: 8px;
-  padding-top: 15px;
+  padding: 34px 0px;
+  /* padding-left: 8px; */
+  /* padding-top: 15px; */
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
+  border: 1px solid;
+  margin: 13px;
 }
+
 input,
 textarea {
   /* height: 17px; */
@@ -357,22 +360,37 @@ textarea::-webkit-scrollbar {
   cursor: pointer;
 }
 
+.slide-bottom {
+  animation: slide-bottom 0.06s linear both;
+}
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-10);
+  }
+  100% {
+    transform: translateY(9px);
+  }
+}
 /* ------------------------- Smaller than 766px (mobile) ------------------------- */
 @media (max-width: 766px) {
   /* Home view */
-
+  h1 {
+    margin: 0.69em 0em 0em;
+  }
   .containerTasks {
     display: flex;
     flex-direction: column;
     gap: 37px;
-    padding: 16px 0px;
+    padding: 0px;
+    padding-top: 2.5em;
+    align-items: center;
   }
   #containerForEachTask {
     flex-direction: row;
     align-items: center;
-    width: 95%;
+    width: 97%;
     gap: 13px;
-    padding: 10px;
+    padding: 0px;
     background-color: transparent;
     justify-content: space-around;
     touch-action: none;
@@ -382,18 +400,18 @@ textarea::-webkit-scrollbar {
     flex-direction: row;
   }
   .markAsComplete {
-    width: 64%;
-    justify-content: flex-start;
-    /* margin-left: 5px; */
+    width: 56%;
+    /* justify-content: flex-start; */
+    margin-left: 5px;
   }
   .dateContainer {
     display: flex;
     flex-direction: column;
-    font-size: 58px;
+    font-size: 62px;
     /* padding-right: 10px; */
     font-family: Montserrat;
     font-weight: 800;
-    width: 30px;
+    width: 15%;
     align-items: center;
     transform: rotate(-90deg);
   }
@@ -403,9 +421,17 @@ textarea::-webkit-scrollbar {
     border: 0.7px solid grey;
   }
   /* -----------NEW TASK------------ */
-  .newTaskInput {
-    padding-left: 8px;
-    padding-top: 15px;
+  .newtTaskInput {
+    padding: 21px 0px;
+    margin: 6px 0px;
+  }
+  .newTaskButton {
+    position: fixed;
+    right: 5vw;
+    top: 9vh;
+  }
+  .add {
+    padding: 19px 13px 1px;
   }
   /* ------------ tasks ------------------*/
   .clase2 {
@@ -432,11 +458,16 @@ textarea::-webkit-scrollbar {
   }
   .completed {
     border: 1px solid rgb(253, 64, 26);
+    padding-right: 3px;
   }
   .unCompleted {
     background-color: rgb(253, 64, 26);
     border-radius: 50%;
     border: 1px solid rgb(253, 64, 26);
+    padding-right: 3px;
+  }
+  .taksTitle {
+    width: 77%;
   }
 
   .editInfoContainerMobile {
@@ -513,8 +544,8 @@ textarea::-webkit-scrollbar {
 
   .bar {
     display: block;
-    width: 25px;
-    height: 3px;
+    width: 23px;
+    height: 2.5px;
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -566,6 +597,10 @@ textarea::-webkit-scrollbar {
 
   .navlistitem li {
     color: #ffffff;
+  }
+  input,
+  textarea {
+    width: 75vw;
   }
 
   /* Account View */
