@@ -7,7 +7,8 @@
 }
 body {
   background: rgb(18, 18, 18);
-  margin: 15px;
+  margin: 0px;
+  /*   margin: 61px; */
   /* font-family: Questrial; */
 }
 :root {
@@ -18,7 +19,8 @@ body {
 }
 h3 {
   margin: 0px;
-  font-size: 21px;
+  font-size: 19px;
+  /* text-transform: uppercase; */
 }
 h4 {
   margin-top: 18px;
@@ -121,7 +123,7 @@ select:-webkit-autofill:focus {
   justify-content: space-between;
   list-style: none;
   margin-top: 42px;
-  padding: 0px 13px;
+  padding: 13px 48px;
 }
 .logOutButton {
   text-align: end;
@@ -210,7 +212,7 @@ select:-webkit-autofill:focus {
   flex-direction: row;
   align-items: flex-start;
 }
-.dateContainer {
+.idContainer {
   display: none;
 }
 .linea {
@@ -219,7 +221,7 @@ select:-webkit-autofill:focus {
 
 /* ----------------------------- NEW TASK -------------------------- */
 .add {
-  padding: 4px 14px;
+  padding: 11px 55px;
 }
 .newTaskButton {
   background-color: transparent;
@@ -239,13 +241,17 @@ select:-webkit-autofill:focus {
   align-items: center;
   gap: 16px;
   border: 1px solid;
-  margin: 13px;
+  margin: 14px 7% 0px;
+}
+.dateContainer {
+  margin: 0;
+  font-family: montserrat;
 }
 
 input,
 textarea {
   /* height: 17px; */
-  width: 80vw;
+  width: 65vw;
   background: none;
   border: none;
   outline: none;
@@ -317,6 +323,28 @@ textarea::-webkit-scrollbar {
   visibility: visible;
   opacity: 1;
 } */
+.profilePicture {
+  width: 200px;
+  border-radius: 50%;
+  /* padding: 67px; */
+}
+#contenedor {
+  display: flex;
+  min-width: 100px;
+  width: 100%;
+}
+.info-profile {
+  /* width: 51%; */
+  display: flex;
+  /* justify-content: center; */
+  background-color: red;
+  padding: 14% 5%;
+  border-radius: 6%;
+  flex-direction: column;
+  margin: 7%;
+  align-items: center;
+  gap: 2em;
+}
 
 .popup {
   margin: 70px auto;
@@ -371,19 +399,29 @@ textarea::-webkit-scrollbar {
     transform: translateY(9px);
   }
 }
+/* Account View */
+.infoUser h2 {
+  font-size: 24px;
+  text-align: center;
+}
 /* ------------------------- Smaller than 766px (mobile) ------------------------- */
 @media (max-width: 766px) {
   /* Home view */
+  body {
+    /*   margin: 15px; */
+  }
   h1 {
-    margin: 0.69em 0em 0em;
+    position: absolute;
+    left: 7vw;
+    top: 5vh;
   }
   .containerTasks {
     display: flex;
     flex-direction: column;
     gap: 37px;
-    padding: 0px;
-    padding-top: 2.5em;
+    padding: 2.5em 15px;
     align-items: center;
+    margin: 4% 0%;
   }
   #containerForEachTask {
     flex-direction: row;
@@ -404,7 +442,7 @@ textarea::-webkit-scrollbar {
     /* justify-content: flex-start; */
     margin-left: 5px;
   }
-  .dateContainer {
+  .idContainer {
     display: flex;
     flex-direction: column;
     font-size: 62px;
@@ -423,10 +461,10 @@ textarea::-webkit-scrollbar {
   /* -----------NEW TASK------------ */
   .newtTaskInput {
     padding: 21px 0px;
-    margin: 6px 0px;
+    margin: 9% 5% 0px;
   }
   .newTaskButton {
-    position: fixed;
+    position: absolute;
     right: 5vw;
     top: 9vh;
   }
@@ -481,7 +519,7 @@ textarea::-webkit-scrollbar {
     z-index: 1;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-between; */
+    z-index: 455;
   }
 
   .titleContainer {
@@ -534,12 +572,13 @@ textarea::-webkit-scrollbar {
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
-    /* margin-bottom: 19px; */
+    margin: 4% 17px 0px;
   }
   .navbar button {
     cursor: pointer;
     background-color: transparent;
     border: none;
+    z-index: 444;
   }
 
   .bar {
@@ -569,7 +608,9 @@ textarea::-webkit-scrollbar {
   }
 
   .dropdown {
-    margin-top: -31px;
+    position: fixed;
+    width: 100%;
+    margin-top: -62px;
     height: 0px;
     background-color: rgb(253, 64, 26);
     transition: height 0.2s ease;
@@ -577,10 +618,11 @@ textarea::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    z-index: 77;
   }
 
   .dropdown-after {
-    height: calc(100vh - 128px);
+    height: calc(70vh - 128px);
     transition: height 0.2s ease;
   }
 
@@ -604,4 +646,7 @@ textarea::-webkit-scrollbar {
   }
 
   /* Account View */
+  .infoUser h2 {
+    font-size: 14px;
+  }
 }

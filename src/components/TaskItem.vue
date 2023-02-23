@@ -1,7 +1,7 @@
 <template>
   <section id="containerForEachTask" :class="newClass">
     <!--  <div class="date"> -->
-    <div class="dateContainer">
+    <div class="idContainer">
       {{ task.id }}
     </div>
     <div class="linea"></div>
@@ -17,7 +17,7 @@
         <h3 :class="props.task.is_complete ? 'clase2' : 'clase1'">
           {{ task.title }}
         </h3>
-        <h4 class="idContainer"></h4>
+        <h4 class="dateContainer">{{ task.inserted_at.slice(0, 10) }}</h4>
         <p :class="props.task.is_complete ? 'clase2' : 'clase1'">
           {{ task.description }}
         </p>
@@ -174,6 +174,7 @@ const showModalToggle = () => {
   console.log("click borrar");
   showModal.value = !showModal.value;
 };
+console.log(props.task);
 
 // textarea
 
@@ -196,7 +197,7 @@ const resizeTextarea = () => {
         console.log("TEXTAREA HEIGHT", e.target);
         let scHeight = e.target.scrollHeight;
         area.style.height = `${scHeight}px`;
-       
+
       }); */
     });
   }
@@ -231,6 +232,8 @@ window.addEventListener("resize", () => {
     mc.off("swipeleft");
   }
 });
+
+/* task.inserted_at.substring(0, 5); */
 </script>
 
 <style>

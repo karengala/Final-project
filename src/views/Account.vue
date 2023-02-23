@@ -1,9 +1,11 @@
 <template>
   <Nav />
   <div class="info-profile">
-    <h1>username: {{ username }}</h1>
-    <h2>Name: {{ name }}</h2>
-    <h2>website: {{ website }}</h2>
+    <div class="infoUser">
+      <h2>username: {{ username }}</h2>
+      <h2>Name: {{ name }}</h2>
+      <h2>website: {{ website }}</h2>
+    </div>
     <img
       :src="
         avatar_url
@@ -69,29 +71,4 @@ Accede al historial del usuario y vuelve a la posición -1.
 */
 </script>
 
-<style scooped>
-.profilePicture {
-  width: 200px;
-  border-radius: 50%;
-  padding: 67px;
-}
-#contenedor {
-  display: flex;
-  min-width: 100px;
-  width: 100%;
-}
-
-#texto {
-  background-color: red;
-  width: 100%;
-  padding: 9px;
-}
-.info-profile {
-  padding: 0px 13px;
-}
-
-/* .backIcon {
-  height: 23px;
-  filter: invert(1);
-} */
-</style>
+<style scooped></style>

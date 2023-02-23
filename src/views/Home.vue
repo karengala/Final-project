@@ -47,10 +47,6 @@ onUpdated(() => {
 });
 
 //
-/* let testProp = ref(null);
-const blockButtonsTest = (value) => {
-  testProp.value = value;
-}; */
 
 getTasks();
 
