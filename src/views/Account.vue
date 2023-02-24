@@ -1,21 +1,33 @@
 <template>
   <Nav />
+  <hr />
   <div class="info-profile">
     <div class="infoUser">
-      <h2>username: {{ username }}</h2>
-      <h2>Name: {{ name }}</h2>
-      <h2>website: {{ website }}</h2>
+      <h2>{{ name }}</h2>
+      <p>{{ username }}</p>
     </div>
-    <img
-      :src="
-        avatar_url
-          ? avatar_url
-          : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
-      "
-      alt="Profile picture"
-      class="profilePicture"
-    />
-    <router-link to="/edit">edit</router-link>
+    <!-- </div> -->
+    <!--  <hr /> -->
+    <div class="profilePicture">
+      <div class="profile-Edit">
+        <div class="profileDescription">
+          <p>About me:</p>
+          <p>
+            {{ website }}
+            rgegrdc fecedndoxno doiwnndxoiw dnxoiednoneu fhiuchjoijfncfncorfn
+            y7hiooinppjgpo j3opgjp3jgo p3jgoj34p gj3p4gj34g j3p4ojg34 h5pojh
+            3o5jhp o5j3hp o5jhpo 35jho5jhop 5jpojg3ojreerin fvneoingewor
+          </p>
+        </div>
+        <router-link class="profileDescriptionButton" to="/edit"
+          >Edit Information</router-link
+        >
+      </div>
+      <img
+        :src="avatar_url ? avatar_url : '../../public/11.png'"
+        alt="Profile picture"
+      />
+    </div>
   </div>
 </template>
 

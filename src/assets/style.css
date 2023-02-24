@@ -125,6 +125,10 @@ select:-webkit-autofill:focus {
   margin-top: 42px;
   padding: 13px 48px;
 }
+.navlist a,
+.navlist button {
+  text-decoration: none;
+}
 .logOutButton {
   text-align: end;
   text-transform: uppercase;
@@ -162,10 +166,7 @@ select:-webkit-autofill:focus {
   /* padding-right: 3px; */
   -webkit-appearance: none !important;
 }
-/* .modal {
-   border: 2px solid; 
-  position: fixed;
-} */
+
 .buttonsInTasks {
   display: flex;
   gap: 25px;
@@ -271,7 +272,6 @@ textarea::-webkit-scrollbar {
   width: 89%;
   margin-left: 15px;
   gap: 4px;
-  border: 1px solid yellow;
 }
 .titleContainer {
   display: flex;
@@ -323,27 +323,61 @@ textarea::-webkit-scrollbar {
   visibility: visible;
   opacity: 1;
 } */
-.profilePicture {
-  width: 200px;
-  border-radius: 50%;
-  /* padding: 67px; */
-}
+
 #contenedor {
   display: flex;
   min-width: 100px;
   width: 100%;
 }
+
 .info-profile {
-  /* width: 51%; */
   display: flex;
-  /* justify-content: center; */
-  background-color: red;
-  padding: 14% 5%;
-  border-radius: 6%;
+  position: relative;
   flex-direction: column;
-  margin: 7%;
   align-items: center;
+}
+.editButtonProfile {
+  border: 1px solid;
+}
+.profilePicture {
+  width: 92%;
+  display: flex;
+  gap: -15%;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+.profile-Edit {
+  width: 61%;
+  display: flex;
   gap: 2em;
+  flex-direction: column;
+  align-items: center;
+}
+.profilePicture img {
+  width: 35vw;
+  /* align-items: center; */
+}
+.profileDescription {
+  width: 73%;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profileDescriptionButton {
+  border: 1px solid;
+  padding: 3% 8%;
+}
+.profile-Edit {
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+  align-items: center;
+}
+.containerEditInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .popup {
@@ -382,10 +416,12 @@ textarea::-webkit-scrollbar {
   overflow: auto;
 }
 .buttonYes {
-  border: 1px solid;
   border-radius: 25px;
   padding: 4px 7px;
   cursor: pointer;
+}
+.buttonYes:hover {
+  background-color: rgb(253, 64, 26);
 }
 
 .slide-bottom {
@@ -400,9 +436,19 @@ textarea::-webkit-scrollbar {
   }
 }
 /* Account View */
+.infoUser {
+  display: flex;
+  gap: 12px;
+  margin: 35px;
+  flex-direction: column;
+}
 .infoUser h2 {
-  font-size: 24px;
-  text-align: center;
+  font-size: 14vw;
+  margin: 0;
+  text-transform: uppercase;
+}
+.infoUser p {
+  margin-left: 9px;
 }
 /* ------------------------- Smaller than 766px (mobile) ------------------------- */
 @media (max-width: 766px) {
@@ -497,12 +543,16 @@ textarea::-webkit-scrollbar {
   .completed {
     border: 1px solid rgb(253, 64, 26);
     padding-right: 3px;
+    height: 12px;
+    width: 12px;
   }
   .unCompleted {
     background-color: rgb(253, 64, 26);
     border-radius: 50%;
     border: 1px solid rgb(253, 64, 26);
     padding-right: 3px;
+    height: 12px;
+    width: 12px;
   }
   .taksTitle {
     width: 77%;
@@ -556,6 +606,9 @@ textarea::-webkit-scrollbar {
     margin: 23px;
     margin-bottom: 0px;
     justify-content: space-between;
+  }
+  .buttonsEditModile button {
+    font-size: 17px;
   }
   .titleContainer :last-child {
     display: none;
@@ -631,10 +684,11 @@ textarea::-webkit-scrollbar {
   }
 
   .navlistitem {
-    text-transform: uppercase;
-    text-align: center;
+    /* text-transform: uppercase; */
+    /* font-family: montserrat; */
+    /* text-align: center; */
     padding: 20px;
-    list-style: none;
+    /*  list-style: none; */
   }
 
   .navlistitem li {
@@ -646,7 +700,18 @@ textarea::-webkit-scrollbar {
   }
 
   /* Account View */
-  .infoUser h2 {
+  /*  .infoUser h2 {
     font-size: 14px;
+  } */
+  .profilePicture {
+    gap: 26px;
+    flex-direction: column-reverse;
+    margin-bottom: 14%;
+  }
+  .profileDescription {
+    width: 100%;
+  }
+  .profilePicture img {
+    width: 55vw;
   }
 }

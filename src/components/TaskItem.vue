@@ -232,8 +232,6 @@ window.addEventListener("resize", () => {
     mc.off("swipeleft");
   }
 });
-
-/* task.inserted_at.substring(0, 5); */
 </script>
 
 <style>

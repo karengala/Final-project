@@ -1,33 +1,31 @@
 <template>
   <Nav />
-  <img
-    :src="
-      avatar_url
-        ? avatar_url
-        : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
-    "
-    alt="Profile picture"
-    class="profilePicture"
-  />
-  <br />
-  <div class="containerEditProfile">
-    <label for="name">name: </label>
-    <input type="text" placeholder="Add a name" v-model="name" />
-    <label for="username">username: </label>
-    <input type="text" placeholder="Add a username" v-model="username" />
-    <label for="website">website: </label>
-    <input type="text" placeholder="Add a website" v-model="website" />
-    <div>
-      <label for="profile_pic">Choose file to upload</label>
-      <input
-        type="file"
-        id="profile_pic"
-        name="profile_pic"
-        accept=".jpg, .jpeg, .png"
-      />
-    </div>
-    <div>
-      <button>Submit</button>
+  <div class="containerEditInfo">
+    <img
+      :src="avatar_url ? avatar_url : '../../public/11.png'"
+      alt="Profile picture"
+      class="profilePicture"
+    />
+    <br />
+    <div class="containerEditProfile">
+      <label for="name">name: </label>
+      <input type="text" placeholder="Add a name" v-model="name" />
+      <label for="username">username: </label>
+      <input type="text" placeholder="Add a username" v-model="username" />
+      <label for="website">website: </label>
+      <input type="text" placeholder="Add a website" v-model="website" />
+      <div>
+        <label for="profile_pic">Choose file to upload</label>
+        <input
+          type="file"
+          id="profile_pic"
+          name="profile_pic"
+          accept=".jpg, .jpeg, .png"
+        />
+      </div>
+      <!--  <div>
+        <button>Submit</button>
+      </div> -->
     </div>
 
     <button @click="editProfile">Save Changes</button>
